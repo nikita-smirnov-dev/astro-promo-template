@@ -1,9 +1,16 @@
 ---
 import { promoData } from '@data/promo';
 import Button from './Button.astro';
+
+interface Props {
+  id: string;
+  class: string;
+}
+
+const { id, class: extraClass = '' } = Astro.props;
 ---
 
-<section class="hero section-offset">
+<section id={id} class:list={extraClass}>
   <div class="hero__container container">
     <div class="hero__content">
       <span class="hero__badge">10 years anniversary</span>
@@ -14,8 +21,8 @@ import Button from './Button.astro';
       <p class="hero__description">{promoData.plot}</p>
     </div>
     <div class="hero__actions">
-      <Button title="О релизе" extraClass="btn--primary" />
-      <Button title="Слушать релиз" extraClass="btn--secondary" />
+      <Button title="О релизе" extraClass="btn--primary" href="#details" />
+      <Button title="Слушать релиз" extraClass="btn--secondary" href="#media" />
     </div>
     <a
       href="#"

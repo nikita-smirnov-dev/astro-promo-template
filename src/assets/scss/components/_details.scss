@@ -1,0 +1,9 @@
+.details {
+  &__container {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+    height: 85dvh;
+  }
+}

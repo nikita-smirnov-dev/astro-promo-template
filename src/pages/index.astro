@@ -3,9 +3,16 @@ import Hero from '@components/Hero.astro';
 import PosterPromo from '@components/PosterPromo.astro';
 import Layout from '@layouts/BaseLayout.astro';
 import { promoData } from '@data/promo';
+import Media from '@components/Media.astro';
+import Details from '@components/Details.astro';
 ---
 
 <Layout title="Silence tends to destroy">
   <PosterPromo imageUrl={promoData.poster} />
-  <Hero />
+  <Hero id="screen-hero" class="app-screen hero section-offset" />
+  <Media id="screen-media" class="app-screen media section-offset hidden" />
+  <Details
+    id="screen-details"
+    class="app-screen details section-offset hidden"
+  />
 </Layout>

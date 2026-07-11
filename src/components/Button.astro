@@ -2,9 +2,17 @@
 interface Props {
   title: string;
   extraClass?: string;
+  href?: string;
 }
 
-const { title, extraClass = '' } = Astro.props;
+const { title, extraClass = '', href } = Astro.props;
+
+const Tag = href ? 'a' : 'button';
 ---
 
-<button class=`btn ${extraClass} btn-reset`>{title}</button>
+<Tag
+  href={href}
+  class=`btn ${extraClass} btn-reset`
+  {...href ? { 'data-astro-prefetch': 'false' } : { type: 'button' }}
+  >{title}</Tag
+>

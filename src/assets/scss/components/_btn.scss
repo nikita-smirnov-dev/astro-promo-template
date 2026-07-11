@@ -7,7 +7,6 @@
   width: 100%;
   max-width: 220px;
   height: 46px;
-  // padding: 10px 10px;
   border-radius: 2px;
   border: 1px solid transparent;
   font-size: var(--font-size-14);
@@ -21,7 +20,6 @@
 
   &--primary,
   &--secondary {
-    // background-color: var(--black-color);
     background-color: transparent;
     border-color: rgba(255, 255, 255, 0.3);
     color: var(--white-color);
