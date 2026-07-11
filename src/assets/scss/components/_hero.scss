@@ -1,10 +1,94 @@
+@use '../mixins/disable-mob-hover' as *;
+
 .hero {
   position: relative;
   z-index: 2;
   width: 100%;
+  height: 100%;
 
-  .hero-promo__title {
+  &__container {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+    height: 85dvh;
+  }
+
+  &__content {
+    margin-bottom: var(--spacing-24);
+  }
+
+  &__badge {
+    display: inline-flex;
+    margin-bottom: var(--spacing-12);
+    font-size: 0.85rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    color: var(--accent-color);
+    letter-spacing: 0.4em;
+    margin-bottom: 16px;
+    padding-left: 0.4em;
+  }
+
+  &__title {
     margin: 0;
-    color: var(--black-color);
+    margin-bottom: var(--spacing-12);
+    text-transform: uppercase;
+    line-height: 1.1;
+    letter-spacing: 0.1rem;
+    font-family: var(--second-family), sans-serif;
+    font-size: var(--font-size-48);
+    color: var(--white-color);
+  }
+
+  &__subtitle {
+    margin: 0;
+    margin-bottom: var(--spacing-24);
+    line-height: 1;
+    text-transform: uppercase;
+    letter-spacing: 0.1rem;
+    font-family: var(--second-family);
+    font-size: var(--font-size-24);
+    font-weight: 500;
+    color: #b3b3b3;
+  }
+
+  &__description {
+    max-width: 540px;
+    width: 100%;
+    margin: 0 auto 32px;
+    text-align: center;
+    font-size: var(--font-size-16);
+    line-height: 1.2;
+    color: #a3a3a3;
+  }
+
+  &__actions {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: auto;
+    margin-bottom: var(--spacing-40);
+    gap: 20px;
+    width: 100%;
+  }
+
+  &__social-link {
+    padding-top: var(--spacing-40);
+    font-family: var(--font-body);
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.3em;
+    color: #737373;
+    padding-left: 0.3em;
+    transition:
+      color 0.25s ease,
+      text-shadow 0.25s ease;
+
+    @include hover {
+      color: var(--accent-color);
+      text-shadow: 0 0 10px rgba(255, 0, 60, 0.4);
+    }
   }
 }

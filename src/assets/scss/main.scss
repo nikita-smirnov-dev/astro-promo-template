@@ -2,5 +2,6 @@
 @use 'fonts' as *;
 @use 'settings' as *;
 
+@use './components/btn' as *;
 @use './components/poster' as *;
 @use './components/hero' as *;

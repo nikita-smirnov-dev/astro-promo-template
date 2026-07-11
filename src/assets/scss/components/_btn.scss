@@ -1,0 +1,43 @@
+@use '../mixins/disable-mob-hover' as *;
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  max-width: 220px;
+  height: 46px;
+  // padding: 10px 10px;
+  border-radius: 2px;
+  border: 1px solid transparent;
+  font-size: var(--font-size-14);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  transition:
+    background-color 0.3s ease-in-out,
+    border-color 0.3s ease-in-out,
+    color 0.3s ease-in-out;
+
+  &--primary,
+  &--secondary {
+    // background-color: var(--black-color);
+    background-color: transparent;
+    border-color: rgba(255, 255, 255, 0.3);
+    color: var(--white-color);
+
+    @include hover {
+      background-color: var(--black-color);
+      border-color: rgba(255, 0, 60, 0.3);
+      color: var(--accent-color);
+    }
+
+    &:active {
+      background-color: var(--accent-color);
+      color: var(--black-color);
+      border-color: var(--accent-color);
+      box-shadow: 0 0 25px var(--accent-color);
+      transform: scale(0.98);
+    }
+  }
+}

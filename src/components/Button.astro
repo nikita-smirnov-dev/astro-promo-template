@@ -1,0 +1,10 @@
+---
+interface Props {
+  title: string;
+  extraClass?: string;
+}
+
+const { title, extraClass = '' } = Astro.props;
+---
+
+<button class=`btn ${extraClass} btn-reset`>{title}</button>

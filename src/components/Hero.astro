@@ -1,5 +1,29 @@
-<section class="hero">
-  <div class="hero-promo container">
-    <h1 class="hero-promo__title">silence tend to destroy</h1>
+---
+import { promoData } from '@data/promo';
+import Button from './Button.astro';
+---
+
+<section class="hero section-offset">
+  <div class="hero__container container">
+    <div class="hero__content">
+      <span class="hero__badge">10 years anniversary</span>
+      <h1 class="hero__title">
+        {promoData.title}
+      </h1>
+      <h2 class="hero__subtitle">{promoData.releaseName}</h2>
+      <p class="hero__description">{promoData.plot}</p>
+    </div>
+    <div class="hero__actions">
+      <Button title="О релизе" extraClass="btn--primary" />
+      <Button title="Слушать релиз" extraClass="btn--secondary" />
+    </div>
+    <a
+      href="#"
+      target="_blank"
+      rel="noopener noreferrer"
+      class="hero__social-link"
+    >
+      VK Community ↗
+    </a>
   </div>
 </section>

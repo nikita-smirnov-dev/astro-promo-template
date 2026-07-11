@@ -47,25 +47,15 @@ img {
   padding: 0;
 }
 
-.input-reset {
-  -webkit-appearance: none;
-  appearance: none;
-  border: none;
-  border-radius: 0;
-  background-color: #fff;
-
-  &::-webkit-search-decoration,
-  &::-webkit-search-cancel-button,
-  &::-webkit-search-results-button,
-  &::-webkit-search-results-decoration {
-    display: none;
-  }
-}
-
 .container {
   margin: 0 auto;
   padding: 0 var(--container-offset);
   max-width: var(--container-width);
+}
+
+.section-offset {
+  padding-top: var(--spacing-60);
+  padding-bottom: var(--spacing-60);
 }
 
 .visually-hidden {

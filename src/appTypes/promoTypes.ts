@@ -4,8 +4,10 @@ export const BasePromoSchema = z.object({
   title: z.string(),
   plot: z.string(),
   poster: z.string(),
+  genre: z.string(),
   releaseName: z.string(),
   releaseYear: z.number(),
+  runtime: z.string(),
   tracks: z
     .array(
       z.object({

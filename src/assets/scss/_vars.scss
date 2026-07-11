@@ -1,7 +1,7 @@
 :root {
   // base
 
-  --content-width: 1500px;
+  --content-width: 1600px;
   --container-offset: 40px;
   --container-width: calc(var(--content-width) + (var(--container-offset) * 2));
 
@@ -9,11 +9,12 @@
 
   --white-color: #ffffff;
   --black-color: #000000;
+  --accent-color: #ff003c;
 
   // fonts
 
   --font-family: 'Inter', sans-serif;
-  --second-family: 'MetalMania', sans-serif;
+  --second-family: 'RussoOne', sans-serif;
 
   //font-size
 
