@@ -1,0 +1,26 @@
+---
+import { Image } from 'astro:assets';
+import { poster } from '@data/images';
+import type { PosterUrl } from '@appTypes/promoTypes';
+
+interface Props {
+  imageUrl: PosterUrl;
+}
+
+const { imageUrl } = Astro.props;
+
+const foundCover = poster[`/src/assets/${imageUrl}`]?.default;
+// const foundCover = poster[imageUrl]?.default;
+
+const cover = foundCover;
+---
+
+<div class="poster">
+  <Image
+    src={cover}
+    alt="Фоновое изображение группы Silence Tends to Destroy"
+    class="poster__bg"
+    quality="high"
+  />
+  <div class="poster__overlay"></div>
+</div>

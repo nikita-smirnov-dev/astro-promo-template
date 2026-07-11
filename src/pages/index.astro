@@ -1,8 +1,11 @@
 ---
 import Hero from '@components/Hero.astro';
+import PosterPromo from '@components/PosterPromo.astro';
 import Layout from '@layouts/BaseLayout.astro';
+import { promoData } from '@data/promo';
 ---
 
 <Layout title="Silence tends to destroy">
+  <PosterPromo imageUrl={promoData.poster} />
   <Hero />
 </Layout>

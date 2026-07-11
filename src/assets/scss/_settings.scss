@@ -4,10 +4,21 @@
   box-sizing: border-box;
 }
 
-// .page {
-//   overflow-y: scroll;
-//   scrollbar-gutter: stable;
-// }
+.page {
+  height: 100dvh;
+  min-height: 100dvh;
+  overflow: hidden;
+}
+
+.page__body {
+  height: 100dvh;
+  min-height: 100dvh;
+  overflow: hidden;
+  font-family: var(--font-family);
+  font-size: var(--font-size-16);
+  color: var(--white-color);
+  background: var(--black-color);
+}
 
 a {
   color: inherit;
@@ -51,17 +62,6 @@ img {
   }
 }
 
-.page__body {
-  font-family: var(--font-family);
-  font-size: var(--font-size-16);
-  color: var(--white-color);
-  background: var(--black-color);
-}
-
-h1 {
-  font-family: var(--second-family);
-}
-
 .container {
   margin: 0 auto;
   padding: 0 var(--container-offset);
@@ -78,4 +78,10 @@ h1 {
   clip: rect(0, 0, 0, 0);
   white-space: nowrap;
   border: 0;
+}
+
+.main {
+  position: relative;
+  width: 100%;
+  height: 100dvh;
 }

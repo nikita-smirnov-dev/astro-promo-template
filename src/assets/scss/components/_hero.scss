@@ -1,0 +1,10 @@
+.hero {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+
+  .hero-promo__title {
+    margin: 0;
+    color: var(--black-color);
+  }
+}
