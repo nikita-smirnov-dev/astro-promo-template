@@ -9,10 +9,7 @@ interface Props {
 
 const { imageUrl } = Astro.props;
 
-const foundCover = poster[`/src/assets/${imageUrl}`]?.default;
-// const foundCover = poster[imageUrl]?.default;
-
-const cover = foundCover;
+const cover = poster[`/src/assets/${imageUrl}`]?.default;
 ---
 
 <div class="poster">

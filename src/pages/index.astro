@@ -10,7 +10,11 @@ import Details from '@components/Details.astro';
 <Layout title="Silence tends to destroy">
   <PosterPromo imageUrl={promoData.poster} />
   <Hero id="screen-hero" class="app-screen hero section-offset" />
-  <Media id="screen-media" class="app-screen media section-offset hidden" />
+  <Media
+    id="screen-media"
+    class="app-screen media section-offset hidden"
+    data={promoData}
+  />
   <Details
     id="screen-details"
     class="app-screen details section-offset hidden"

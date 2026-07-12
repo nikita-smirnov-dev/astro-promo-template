@@ -1,0 +1,255 @@
+@use '../mixins/disable-mob-hover' as *;
+
+.media-panel {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr 2fr 1fr;
+  align-items: center;
+  gap: 30px;
+  margin-top: auto;
+  padding: 20px;
+  background: rgba(15, 15, 15, 0.75);
+  backdrop-filter: blur(12px);
+
+  &__meta {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    justify-content: flex-start;
+    gap: 20px;
+  }
+
+  &__cover {
+    width: 150px;
+    height: 150px;
+    border-radius: 6px;
+  }
+
+  &__content {
+    text-align: left;
+  }
+
+  &__release-title {
+    margin: 0;
+    margin-bottom: 10px;
+    color: var(--text-color);
+  }
+
+  &__release-info {
+    margin: 0;
+    margin-bottom: 10px;
+    color: var(--text-color);
+  }
+
+  &__player {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    width: 100%;
+  }
+
+  &__player-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    padding-bottom: 8px;
+  }
+
+  &__controls {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+  }
+
+  &__btn {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transform: translateY(-2px);
+    transition:
+      background-color 0.3s ease-in-out,
+      transform 0.3s ease;
+
+    &.is-playing {
+      .media-panel--play {
+        opacity: 0;
+      }
+
+      .media-panel--pause {
+        opacity: 1;
+      }
+    }
+  }
+
+  &__icon {
+    width: 40px;
+    height: 40px;
+    fill: rgba(255, 60, 47, 0.6);
+    transition:
+      opacity 0.3s ease-in-out,
+      fill 0.3s ease-in-out;
+    pointer-events: none;
+  }
+
+  &--play {
+    opacity: 1;
+  }
+
+  &--pause {
+    position: absolute;
+    opacity: 0;
+  }
+
+  &--prev,
+  &--next {
+    width: 30px;
+    height: 30px;
+  }
+
+  &__player-bottom {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 24px;
+  }
+
+  &__progress-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    flex-grow: 1;
+  }
+
+  &__time {
+    font-size: 0.75rem;
+    color: #666;
+    min-width: 30px;
+  }
+
+  &__progress-container {
+    flex-grow: 1;
+    height: 4px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 2px;
+    cursor: pointer;
+  }
+
+  &__progress-bar {
+    height: 100%;
+    width: 0%;
+    border-radius: 2px;
+
+    background: linear-gradient(
+      90deg,
+      var(--accent-color),
+      rgba(255, 60, 47, 0.6)
+    );
+  }
+
+  &__volume-container {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    width: 20%;
+    flex-shrink: 0;
+  }
+
+  &__volume-btn {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    &.is-volume {
+      .media-panel--volume {
+        opacity: 0;
+      }
+
+      .media-panel--muted {
+        opacity: 1;
+      }
+    }
+  }
+
+  &__volume-icon {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    fill: #666;
+  }
+
+  &--muted {
+    opacity: 0;
+  }
+
+  &__volume-range {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    width: 140px;
+    margin-left: 10px;
+  }
+
+  &__volume-input {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 100%;
+    height: 4px;
+    background: #300000;
+    border-radius: 2px;
+    outline: none;
+
+    &::-webkit-slider-thumb {
+      -webkit-appearance: none;
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background: var(--accent-color, #ff0000);
+      cursor: pointer;
+      box-shadow: 0 0 6px var(--accent-color, #ff0000);
+    }
+  }
+
+  //
+  //   &::-webkit-slider-thumb:hover {
+  //     background: #fff;
+  //     box-shadow: 0 0 12px #fff;
+  //   }
+  //   &::-moz-range-thumb:hover {
+  //     background: #fff;
+  //     box-shadow: 0 0 12px #fff;
+  //   }
+  // }
+
+  &__tracks {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  &__track-list {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    gap: 20px;
+    padding-right: 15px;
+  }
+
+  &__track-item {
+    cursor: pointer;
+    color: var(--text-color);
+    transition: color 0.2s ease;
+
+    &:hover {
+      color: var(--white-color);
+    }
+
+    &.is-active {
+      color: var(--accent-color);
+      font-weight: bold;
+    }
+  }
+}
