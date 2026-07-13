@@ -1,0 +1,52 @@
+.rock-hand {
+  position: fixed;
+  top: 50%;
+  transform: translateY(-50%);
+  left: -300px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  padding-left: 20px;
+  width: 200px;
+  height: 200px;
+  background-image: url('/img/single-hand.png');
+  background-repeat: no-repeat;
+  background-size: contain;
+  z-index: 9999;
+  pointer-events: none;
+
+  &__text {
+    position: absolute;
+    top: 50px;
+    left: 50px;
+    font-family: monospace, sans-serif;
+    font-size: 14px;
+    font-weight: bold;
+    color: #ff3c2f;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    text-shadow: 0 0 5px rgba(255, 60, 47, 0.5);
+    pointer-events: none;
+    line-height: 1.2;
+    margin: 0;
+  }
+
+  &.is-visible {
+    animation: moveHandLeft 4.5s ease-in-out forwards;
+  }
+}
+
+@keyframes moveHandLeft {
+  0% {
+    left: -300px;
+  }
+  12% {
+    left: -33px;
+  }
+  88% {
+    left: -33px;
+  }
+  100% {
+    left: -300px;
+  }
+}
