@@ -5,10 +5,16 @@ export const promoData: PromoDataT = {
   plot: 'Юбилейный релиз. 10 лет с момента выхода альбома, который определил звучание локальной деткор-сцены.',
   poster: 'img/poster/poster-bg.jpg',
   cover: 'img/poster/cover.jpg',
-  genre: 'Progressive Metalcore / Melodic Metalcore',
+  genre: 'Progressive / Melodic Metalcore',
   releaseName: 'Your Death Is My Salvation',
   releaseYear: 2016,
   runtime: '18 минут',
+  type: 'EP Альбом',
+  tracksCount: 5,
+  country: 'Россия',
+  city: 'Санкт-Петербург',
+  label: 'Independent',
+  language: 'Английский',
   tracks: [
     {
       id: 1,

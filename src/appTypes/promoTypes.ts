@@ -9,6 +9,12 @@ export const BasePromoSchema = z.object({
   releaseName: z.string(),
   releaseYear: z.number(),
   runtime: z.string(),
+  type: z.string(),
+  tracksCount: z.number(),
+  country: z.string(),
+  city: z.string(),
+  label: z.string(),
+  language: z.string(),
   tracks: z
     .array(
       z.object({
@@ -24,4 +30,3 @@ export const BasePromoSchema = z.object({
 export type PromoDataT = z.infer<typeof BasePromoSchema>;
 
 export type PosterUrl = PromoDataT['poster'];
-// export type PosterImage = z.infer<typeof PosterImageSchema>;

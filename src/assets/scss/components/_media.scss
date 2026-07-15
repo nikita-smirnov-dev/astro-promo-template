@@ -1,9 +1,16 @@
 .media {
   &__container {
+    position: relative;
     display: flex;
-    align-items: center;
+    // align-items: center;
     flex-direction: column;
     text-align: center;
     height: 85dvh;
+  }
+
+  &__inner {
+    position: absolute;
+    top: 20px;
+    left: 37px;
   }
 }

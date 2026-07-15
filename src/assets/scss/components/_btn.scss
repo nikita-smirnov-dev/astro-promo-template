@@ -5,20 +5,20 @@
   align-items: center;
   justify-content: center;
   width: 100%;
-  max-width: 220px;
-  height: 46px;
-  border-radius: 2px;
-  border: 1px solid transparent;
-  font-size: var(--font-size-14);
-  font-weight: 600;
-  text-transform: uppercase;
-  letter-spacing: 0.1em;
-  transition:
-    background-color 0.3s ease-in-out,
-    border-color 0.3s ease-in-out,
-    color 0.3s ease-in-out;
 
   &--primary {
+    max-width: 220px;
+    height: 46px;
+    border-radius: 2px;
+    border: 1px solid transparent;
+    font-size: var(--font-size-14);
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    transition:
+      background-color 0.3s ease-in-out,
+      border-color 0.3s ease-in-out,
+      color 0.3s ease-in-out;
     background-color: transparent;
     border-color: rgba(255, 255, 255, 0.3);
     color: var(--white-color);
@@ -39,21 +39,16 @@
   }
 
   &--secondary {
-    padding-top: var(--spacing-40);
-    font-family: var(--font-body);
-    font-size: 0.75rem;
+    font-size: var(--font-size-14);
     font-weight: 600;
     text-transform: uppercase;
     letter-spacing: 0.3em;
-    color: var(--link-color);
     padding-left: 0.3em;
-    transition:
-      color 0.3s ease-in-out,
-      text-shadow 0.3s ease-in-out;
+    color: var(--link-color);
+    transition: color 0.3s ease-in-out;
 
     @include hover {
-      color: var(--accent-color);
-      text-shadow: 0 0 10px rgba(255, 0, 60, 0.4);
+      color: var(--white-color);
     }
   }
 }

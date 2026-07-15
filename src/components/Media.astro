@@ -4,6 +4,7 @@ import { Icon } from 'astro-icon/components';
 import Button from './Button.astro';
 import { poster } from '@data/images';
 import type { PromoDataT } from '@appTypes/promoTypes';
+import MainTitle from './MainTitle.astro';
 
 interface Props {
   id: string;
@@ -18,7 +19,14 @@ const cover = poster[`/src/assets/${data.cover}`]?.default;
 
 <section id={id} class:list={extraClass}>
   <div class="media__container container">
-    <Button title="Назад" extraClass="btn--primary" href="#hero" />
+    <div class="media__inner">
+      <Button
+        title="Назад"
+        extraClass="media__btn btn--secondary"
+        href="#hero"
+      />
+    </div>
+    <MainTitle />
     <div class="media-panel" data-media>
       <div class="media-panel__meta">
         {

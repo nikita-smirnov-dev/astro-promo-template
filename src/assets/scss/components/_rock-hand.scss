@@ -19,15 +19,19 @@
     position: absolute;
     top: 50px;
     left: 50px;
-    font-family: monospace, sans-serif;
-    font-size: 14px;
+    font-family: 'RussoOne', sans-serif;
+    font-size: 20px;
     font-weight: bold;
-    color: #ff3c2f;
+    color: #ff6600;
     text-transform: uppercase;
-    letter-spacing: 1px;
-    text-shadow: 0 0 5px rgba(255, 60, 47, 0.5);
+    letter-spacing: 2px;
     pointer-events: none;
-    line-height: 1.2;
+    line-height: 1;
+    text-shadow:
+      -1px -1px 0 #1a1a1a,
+      1px -1px 0 #1a1a1a,
+      -1px 1px 0 #1a1a1a,
+      1px 1px 0 #1a1a1a;
     margin: 0;
   }
 

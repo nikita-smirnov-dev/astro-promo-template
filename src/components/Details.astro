@@ -1,14 +1,62 @@
 ---
+import Button from './Button.astro';
+import MainTitle from './MainTitle.astro';
+import type { PromoDataT } from '@appTypes/promoTypes';
+
 interface Props {
   id: string;
   class: string;
+  data: PromoDataT;
 }
 
-const { id, class: extraClass = '' } = Astro.props;
+const { id, class: extraClass = '', data } = Astro.props;
 ---
 
 <section id={id} class:list={extraClass}>
-  <div class="details-container container">
-    <h1>details</h1>
+  <div class="details__container container">
+    <div class="details__inner">
+      <Button
+        title="Назад"
+        extraClass="details__btn btn--secondary"
+        href="#hero"
+      />
+    </div>
+    <MainTitle />
+    <div class="details__info">
+      <ul class="details__list list-reset">
+        <li class="details__item">
+          <span class="details__label">Год выпуска</span>
+          <span class="details__value">{data.releaseYear}</span>
+        </li>
+        <li class="details__item">
+          <span class="details__label">Жанр</span>
+          <span class="details__value">{data.genre}</span>
+        </li>
+        <li class="details__item">
+          <span class="details__label">Продолжительность</span>
+          <span class="details__value">{data.runtime}</span>
+        </li>
+        <li class="details__item">
+          <span class="details__label">Количество треков</span>
+          <span class="details__value">{data.tracksCount}</span>
+        </li>
+        <li class="details__item">
+          <span class="details__label">Тип релиза</span>
+          <span class="details__value">{data.type}</span>
+        </li>
+        <li class="details__item">
+          <span class="details__label">Лейбл</span>
+          <span class="details__value">{data.label}</span>
+        </li>
+        <li class="details__item">
+          <span class="details__label">Язык</span>
+          <span class="details__value">{data.language}</span>
+        </li>
+        <li class="details__item">
+          <span class="details__label">Локация</span>
+          <span class="details__value">{data.country}, {data.city}</span>
+        </li>
+      </ul>
+    </div>
   </div>
 </section>

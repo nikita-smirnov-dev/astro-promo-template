@@ -1,6 +1,7 @@
 ---
 import { promoData } from '@data/promo';
 import Button from './Button.astro';
+import MainTitle from './MainTitle.astro';
 
 interface Props {
   id: string;
@@ -13,11 +14,7 @@ const { id, class: extraClass = '' } = Astro.props;
 <section id={id} class:list={extraClass}>
   <div class="hero__container container">
     <div class="hero__content">
-      <span class="hero__badge">10 years anniversary</span>
-      <h1 class="hero__title">
-        {promoData.title}
-      </h1>
-      <h2 class="hero__subtitle">{promoData.releaseName}</h2>
+      <MainTitle />
       <p class="hero__description">{promoData.plot}</p>
     </div>
     <div class="hero__actions">

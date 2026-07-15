@@ -12,6 +12,6 @@ export const initRockHand = () => {
 
     setTimeout(triggerHand, 2000);
 
-    setInterval(triggerHand, 40000);
+    setInterval(triggerHand, 30000);
   }
 };
