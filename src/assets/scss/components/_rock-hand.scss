@@ -1,3 +1,5 @@
+@use '../mixins/breakpoint.scss' as *;
+
 .rock-hand {
   position: fixed;
   top: 50%;
@@ -15,12 +17,17 @@
   z-index: 9999;
   pointer-events: none;
 
+  @include mobile {
+    width: 150px;
+    height: 150px;
+  }
+
   &__text {
     position: absolute;
     top: 50px;
     left: 50px;
     font-family: 'RussoOne', sans-serif;
-    font-size: 20px;
+    font-size: var(--font-size-20);
     font-weight: bold;
     color: #ff6600;
     text-transform: uppercase;
@@ -33,6 +40,12 @@
       -1px 1px 0 #1a1a1a,
       1px 1px 0 #1a1a1a;
     margin: 0;
+
+    @include mobile {
+      top: 40px;
+      left: 37px;
+      font-size: var(--font-size-14);
+    }
   }
 
   &.is-visible {

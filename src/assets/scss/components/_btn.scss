@@ -1,4 +1,5 @@
 @use '../mixins/disable-mob-hover' as *;
+@use '../mixins/breakpoint.scss' as *;
 
 .btn {
   display: inline-flex;
@@ -35,6 +36,11 @@
       border-color: var(--accent-color);
       box-shadow: 0 0 25px var(--accent-color);
       transform: scale(0.98);
+    }
+
+    @include mobile {
+      max-width: 100%;
+      flex-direction: column;
     }
   }
 

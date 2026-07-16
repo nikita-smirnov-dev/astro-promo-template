@@ -1,3 +1,5 @@
+@use '../mixins/breakpoint.scss' as *;
+
 .media {
   &__container {
     position: relative;
@@ -12,5 +14,40 @@
     position: absolute;
     top: 20px;
     left: 37px;
+
+    @include tablet {
+      top: -35px;
+      left: 20px;
+    }
+
+    @include mobile {
+      top: -20px;
+    }
+  }
+
+  &__btn-icon {
+    display: none;
+  }
+
+  @include tablet {
+    &__btn-icon {
+      width: 40px;
+      height: 40px;
+      display: block;
+      stroke: var(--text-color);
+    }
+  }
+
+  @include mobile {
+    &__btn-icon {
+      width: 20px;
+      height: 20px;
+    }
+  }
+
+  @include tablet {
+    &__btn-text {
+      display: none;
+    }
   }
 }

@@ -2,8 +2,9 @@ import type { PromoDataT } from '@appTypes/promoTypes';
 
 export const promoData: PromoDataT = {
   title: 'Silence Tends to Destroy',
-  plot: 'Юбилейный релиз. 10 лет с момента выхода альбома, который определил звучание локальной деткор-сцены.',
-  poster: 'img/poster/poster-bg.jpg',
+  plot: 'Юбилейный релиз. 10 лет с момента выхода альбома, заложившего фундамент локальной дэткор-сцены. Тяжелые риффы, пронзительная мелодика и        бескомпромиссная агрессия, которые определили эпоху и до сих пор отзываются эхом в стенах бетонных залов.',
+  poster: 'img/poster/poster-bg.png',
+  posterMobile: 'img/poster/poster-mobile.png',
   cover: 'img/poster/cover.jpg',
   genre: 'Progressive / Melodic Metalcore',
   releaseName: 'Your Death Is My Salvation',

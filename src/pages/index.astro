@@ -8,17 +8,23 @@ import Details from '@components/Details.astro';
 import RockHand from '@components/RockHand.astro';
 ---
 
-<Layout title="Silence tends to destroy">
-  <PosterPromo imageUrl={promoData.poster} />
-  <Hero id="screen-hero" class="app-screen hero section-offset" />
+<Layout title=`${promoData.title} - ${promoData.releaseName} (10 лет релизу)`>
+  <PosterPromo
+    imageUrl={promoData.poster}
+    imageMobileUrl={promoData.posterMobile}
+  />
+  <Hero
+    id="screen-hero"
+    class="app-screen hero section-offset screen-section"
+  />
   <Media
     id="screen-media"
-    class="app-screen media section-offset hidden"
+    class="app-screen media section-offset screen-section hidden"
     data={promoData}
   />
   <Details
     id="screen-details"
-    class="app-screen details section-offset hidden"
+    class="app-screen details section-offset screen-section hidden"
     data={promoData}
   />
   <RockHand />

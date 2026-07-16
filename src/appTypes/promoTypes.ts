@@ -4,6 +4,7 @@ export const BasePromoSchema = z.object({
   title: z.string(),
   plot: z.string(),
   poster: z.string(),
+  posterMobile: z.string(),
   cover: z.string(),
   genre: z.string(),
   releaseName: z.string(),
@@ -30,3 +31,4 @@ export const BasePromoSchema = z.object({
 export type PromoDataT = z.infer<typeof BasePromoSchema>;
 
 export type PosterUrl = PromoDataT['poster'];
+export type PosterMobileUrl = PromoDataT['posterMobile'];

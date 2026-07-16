@@ -1,5 +1,6 @@
 ---
 import Button from './Button.astro';
+import { Icon } from 'astro-icon/components';
 import MainTitle from './MainTitle.astro';
 import type { PromoDataT } from '@appTypes/promoTypes';
 
@@ -15,14 +16,13 @@ const { id, class: extraClass = '', data } = Astro.props;
 <section id={id} class:list={extraClass}>
   <div class="details__container container">
     <div class="details__inner">
-      <Button
-        title="Назад"
-        extraClass="details__btn btn--secondary"
-        href="#hero"
-      />
+      <Button extraClass="details__btn btn--secondary" href="#hero">
+        <Icon name="arrow-back" class="details__btn-icon" />
+        <span class="details__btn-text">Назад</span>
+      </Button>
     </div>
     <MainTitle />
-    <div class="details__info">
+    <div class="details__info" data-details>
       <ul class="details__list list-reset">
         <li class="details__item">
           <span class="details__label">Год выпуска</span>

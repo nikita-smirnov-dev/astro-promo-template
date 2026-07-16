@@ -1,6 +1,6 @@
 ---
 interface Props {
-  title: string;
+  title?: string;
   extraClass?: string;
   href?: string;
 }
@@ -14,5 +14,6 @@ const Tag = href ? 'a' : 'button';
   href={href}
   class=`btn ${extraClass} btn-reset`
   {...href ? { 'data-astro-prefetch': 'false' } : { type: 'button' }}
-  >{title}</Tag
+  >{title}
+  <slot /></Tag
 >

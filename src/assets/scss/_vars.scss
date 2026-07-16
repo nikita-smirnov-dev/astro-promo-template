@@ -1,9 +1,19 @@
+@use './mixins/breakpoint.scss' as *;
+
 :root {
   // base
 
   --content-width: 1600px;
   --container-offset: 40px;
   --container-width: calc(var(--content-width) + (var(--container-offset) * 2));
+
+  @include small-tablet {
+    --container-offset: 20px;
+  }
+
+  @include mobile {
+    --container-offset: 16px;
+  }
 
   // colors
 

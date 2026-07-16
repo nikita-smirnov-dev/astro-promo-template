@@ -1,4 +1,5 @@
 @use '../mixins/disable-mob-hover' as *;
+@use '../mixins/breakpoint.scss' as *;
 
 .media-panel {
   width: 100%;
@@ -9,10 +10,22 @@
   margin-top: auto;
   padding: 20px;
   background: rgba(0, 0, 0, 0.4);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
+  background: linear-gradient(
+    135deg,
+    rgba(10, 10, 10, 0.95) 0%,
+    rgba(20, 20, 20, 0.8) 100%
+  );
   border: 1px solid rgba(255, 255, 255, 0.05);
   border-radius: 4px;
+
+  @include mobile {
+    grid-template-columns: 1fr;
+  }
+
+  @include small-mobile {
+    display: flex;
+    flex-direction: column;
+  }
 
   &__meta {
     display: flex;
@@ -20,6 +33,11 @@
     align-items: start;
     justify-content: flex-start;
     gap: 20px;
+
+    @include small-mobile {
+      align-items: center;
+      justify-content: center;
+    }
   }
 
   &__cover {
@@ -30,6 +48,10 @@
 
   &__content {
     text-align: left;
+
+    @include small-mobile {
+      text-align: center;
+    }
   }
 
   &__release-title {
@@ -49,6 +71,11 @@
     flex-direction: column;
     gap: 24px;
     width: 100%;
+
+    @include mobile {
+      grid-column: 2 span;
+      order: 3;
+    }
   }
 
   &__player-top {
@@ -57,6 +84,10 @@
     align-items: center;
     border-bottom: 1px solid rgba(255, 255, 255, 0.05);
     padding-bottom: 8px;
+
+    @include mobile {
+      justify-content: center;
+    }
   }
 
   &__controls {
@@ -165,6 +196,10 @@
     gap: 8px;
     width: 20%;
     flex-shrink: 0;
+
+    @include mobile {
+      display: none;
+    }
   }
 
   &__volume-btn {
@@ -245,7 +280,6 @@
     align-items: flex-start;
     justify-content: center;
     gap: 20px;
-    padding-right: 15px;
   }
 
   &__track-item {
