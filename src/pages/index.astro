@@ -6,9 +6,11 @@ import { promoData } from '@data/promo';
 import Media from '@components/Media.astro';
 import Details from '@components/Details.astro';
 import RockHand from '@components/RockHand.astro';
+import WidgetPlayer from '@components/WidgetPlayer.astro';
 ---
 
 <Layout title=`${promoData.title} - ${promoData.releaseName} (10 лет релизу)`>
+  <WidgetPlayer />
   <PosterPromo
     imageUrl={promoData.poster}
     imageMobileUrl={promoData.posterMobile}
@@ -28,4 +30,5 @@ import RockHand from '@components/RockHand.astro';
     data={promoData}
   />
   <RockHand />
+  <audio id="main-audio" data-main-audio src="" style="display: none;"></audio>
 </Layout>

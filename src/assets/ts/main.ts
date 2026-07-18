@@ -1,7 +1,7 @@
 import { initScreenSwitcher } from './components/screenSwitcher';
-import { initMediaPlayer } from './components/media-player';
 import { initRockHand } from './components/rock-hand';
+import { initPlayer } from './components/player';
 
 initRockHand();
-initMediaPlayer();
+initPlayer();
 document.addEventListener('DOMContentLoaded', initScreenSwitcher);

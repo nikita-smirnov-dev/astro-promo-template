@@ -5,6 +5,7 @@ import Button from './Button.astro';
 import { poster } from '@data/images';
 import type { PromoDataT } from '@appTypes/promoTypes';
 import MainTitle from './MainTitle.astro';
+import Player from './Player.astro';
 
 interface Props {
   id: string;
@@ -45,110 +46,7 @@ const cover = poster[`/src/assets/${data.cover}`]?.default;
         </div>
       </div>
 
-      <div class="media-panel__player">
-        <div class="media-panel__player-top">
-          <div class="media-panel__controls">
-            <button
-              class="media-panel__btn btn-reset"
-              aria-label="Предыдущий саундтрек"
-              data-prev
-            >
-              <Icon
-                name="prev"
-                class="media-panel__icon media-panel--prev"
-                aria-hidden
-              />
-            </button>
-            <button
-              class="media-panel__btn btn-reset"
-              aria-label="Воспроизвести саундтрек"
-              data-play
-            >
-              <Icon
-                name="play"
-                class="media-panel__icon media-panel--play"
-                aria-hidden
-              />
-              <Icon
-                name="pause"
-                class="media-panel__icon media-panel--pause"
-                aria-hidden
-              />
-            </button>
-            <button
-              class="media-panel__btn btn-reset"
-              aria-label="Следующий саундтрек"
-              data-next
-            >
-              <Icon
-                name="next"
-                class="media-panel__icon media-panel--next"
-                aria-hidden
-              />
-            </button>
-          </div>
-        </div>
-
-        <div class="media-panel__player-bottom">
-          <div class="media-panel__progress-wrapper">
-            <span class="media-panel__time" data-start-time>0:00</span>
-            <div
-              class="media-panel__progress-container"
-              tabindex="0"
-              role="progressbar"
-              aria-label="Прокрутка трека"
-              aria-valuemin="0"
-              aria-valuemax="100"
-              data-progress-wrapper
-            >
-              <div class="media-panel__progress-bar" data-progress-bar></div>
-            </div>
-            <span class="media-panel__time" data-end-time>3:22</span>
-          </div>
-
-          <div class="media-panel__volume-container" data-volume-wrapper>
-            <button
-              class="media-panel__volume-btn btn-reset"
-              aria-label="Кнопка громкости"
-              aria-controls="volume-controls-5"
-              data-volume-btn
-            >
-              <Icon
-                name="volume"
-                class="media-panel__volume-icon media-panel--volume"
-                aria-hidden
-              />
-              <Icon
-                name="muted"
-                class="media-panel__volume-icon media-panel--muted"
-                aria-hidden
-              />
-            </button>
-            <div class="media-panel__volume-range" id="volume-controls-5">
-              <input
-                type="range"
-                class="media-panel__volume-input"
-                min="0"
-                max="1"
-                step="0.1"
-                aria-label="Регулятор громкости"
-                aria-valuenow="50"
-                aria-orientation="vertical"
-                data-volume-input
-              />
-            </div>
-            <button
-              class="media-panel__volume-btn btn-reset"
-              aria-label="Кнопка громкости"
-              aria-controls="volume-controls-5"
-              aria-expanded="false"
-            >
-            </button>
-          </div>
-
-          <audio id="main-audio" data-main-audio src=""></audio>
-        </div>
-      </div>
+      <Player isWidget={false} />
 
       <div class="media-panel__tracks">
         <ul class="media-panel__track-list list-reset">

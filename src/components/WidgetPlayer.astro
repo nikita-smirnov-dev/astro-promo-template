@@ -1,0 +1,18 @@
+---
+import Player from './Player.astro';
+import { Icon } from 'astro-icon/components';
+import Button from './Button.astro';
+---
+
+<div class="widget-player hidden">
+  <div class="widget-player__wrapper">
+    <Player isWidget={true} />
+    <Button
+      extraClass="widget-player__btn"
+      aria-label="Закрыть виджет плеер"
+      data-close-widget
+    >
+      <Icon name="close" class="widget-player__icon" aria-label="hidden" />
+    </Button>
+  </div>
+</div>

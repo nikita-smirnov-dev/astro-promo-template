@@ -1,3 +1,8 @@
+import { setupWidgetCloseButton } from '../utils/setupWidgetCloseButton';
+import { initWidgetVisibility } from './widgetVisibility';
+
+setupWidgetCloseButton();
+
 export const initScreenSwitcher = () => {
   const screens = {
     hero: document.getElementById('screen-hero'),
@@ -14,7 +19,9 @@ export const initScreenSwitcher = () => {
     screens.media.classList.toggle('hidden', hash !== '#media');
     screens.details.classList.toggle('hidden', hash !== '#details');
 
-    console.log('Switching screen - ', hash);
+    setTimeout(() => {
+      initWidgetVisibility(hash);
+    }, 800);
   }
 
   window.addEventListener('hashchange', handleRoute);

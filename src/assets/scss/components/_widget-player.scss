@@ -1,0 +1,63 @@
+@use '../mixins/disable-mob-hover' as *;
+
+.widget-player {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 100;
+  padding: 5px 30px;
+  background-color: var(--black-color);
+  border-left: 1px solid rgba(255, 255, 255, 0.3);
+  border-right: 1px solid rgba(255, 255, 255, 0.3);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+  border-bottom-left-radius: 20px;
+  border-bottom-right-radius: 20px;
+  opacity: 1;
+  visibility: visible;
+  transition:
+    opacity 0.3s ease-in-out,
+    visibility 0.3s ease-in-out;
+
+  &__wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 30px;
+  }
+
+  &__title {
+    color: red;
+  }
+
+  .player__top--widget {
+    padding-bottom: 0;
+    border-bottom: none;
+  }
+
+  .player__icon--widget {
+    width: 30px;
+    height: 30px;
+  }
+
+  &__btn {
+    padding-bottom: 4px;
+    color: rgba(255, 255, 255, 0.3);
+    transition: color 0.3s ease-in-out;
+
+    @include hover {
+      color: var(--accent-color);
+    }
+  }
+
+  &__icon {
+    width: 25px;
+    height: 25px;
+    color: currentcolor;
+  }
+
+  &.hidden {
+    opacity: 0;
+    visibility: hidden;
+  }
+}

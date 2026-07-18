@@ -1,0 +1,128 @@
+---
+import { Icon } from 'astro-icon/components';
+
+interface Props {
+  isWidget?: boolean;
+}
+const { isWidget = false } = Astro.props;
+---
+
+<div
+  class="player player--main"
+  data-player
+  data-is-widget={isWidget.toString()}
+>
+  <div class:list={['player__top', { 'player__top--widget': isWidget }]}>
+    <div class="player__controls">
+      <button
+        class="player__btn btn-reset"
+        aria-label="Предыдущий саундтрек"
+        data-prev
+      >
+        <Icon
+          name="prev"
+          class:list={[
+            'player__icon player__icon--prev',
+            { 'player__icon--widget': isWidget },
+          ]}
+          aria-hidden="true"
+        />
+      </button>
+      <button
+        class="player__btn btn-reset"
+        aria-label="Воспроизвести саундтрек"
+        data-play
+      >
+        <Icon
+          name="play"
+          class:list={[
+            'player__icon player__icon--play',
+            { 'player__icon--widget': isWidget },
+          ]}
+          aria-hidden="true"
+        />
+        <Icon
+          name="pause"
+          class:list={[
+            'player__icon player__icon--pause',
+            { 'player__icon--widget': isWidget },
+          ]}
+          aria-hidden="true"
+        />
+      </button>
+      <button
+        class="player__btn btn-reset"
+        aria-label="Следующий саундтрек"
+        data-next
+      >
+        <Icon
+          name="next"
+          class:list={[
+            'player__icon player__icon--next',
+            { 'player__icon--widget': isWidget },
+          ]}
+          aria-hidden="true"
+        />
+      </button>
+    </div>
+  </div>
+
+  {
+    !isWidget && (
+      <div class="player__bottom">
+        <div class="player__progress-wrapper">
+          <span class="player__time" data-start-time>
+            0:00
+          </span>
+          <div
+            class="player__progress-container"
+            tabindex="0"
+            role="progressbar"
+            aria-label="Прокрутка трека"
+            aria-valuemin="0"
+            aria-valuemax="100"
+            data-progress-wrapper
+          >
+            <div class="player__progress-bar" data-progress-bar />
+          </div>
+          <span class="player__time" data-end-time>
+            3:22
+          </span>
+        </div>
+
+        <div class="player__volume-container" data-volume-wrapper>
+          <button
+            class="player__volume-btn btn-reset"
+            aria-label="Кнопка громкости"
+            aria-controls="volume-controls-5"
+            data-volume-btn
+          >
+            <Icon
+              name="volume"
+              class="player__volume-icon player__icon--volume"
+              aria-hidden="true"
+            />
+            <Icon
+              name="muted"
+              class="player__volume-icon player__icon--muted"
+              aria-hidden="true"
+            />
+          </button>
+          <div class="player__volume-range" id="volume-controls-5">
+            <input
+              type="range"
+              class="player__volume-input"
+              min="0"
+              max="1"
+              step="0.1"
+              aria-label="Регулятор громкости"
+              aria-valuenow="0.5"
+              aria-orientation="vertical"
+              data-volume-input
+            />
+          </div>
+        </div>
+      </div>
+    )
+  }
+</div>
