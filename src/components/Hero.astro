@@ -14,7 +14,7 @@ const { id, class: extraClass = '' } = Astro.props;
 <section id={id} class:list={extraClass}>
   <div class="hero__container container">
     <div class="hero__content">
-      <MainTitle />
+      <MainTitle title={promoData.title} subtitle={promoData.releaseName} />
       <p class="hero__description">{promoData.plot}</p>
     </div>
     <div class="hero__actions">

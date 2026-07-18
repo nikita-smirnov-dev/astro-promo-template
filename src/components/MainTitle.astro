@@ -1,11 +1,18 @@
 ---
 import { promoData } from '@data/promo';
+
+interface Props {
+  title: string;
+  subtitle?: string;
+}
+
+const { title, subtitle } = Astro.props;
 ---
 
 <div class="main-title">
   <span class="main-title__badge">10 years anniversary</span>
   <h1 class="main-title__title">
-    {promoData.title}
+    {title}
   </h1>
-  <h2 class="main-title__subtitle">{promoData.releaseName}</h2>
+  <h2 class="main-title__subtitle">{subtitle}</h2>
 </div>
