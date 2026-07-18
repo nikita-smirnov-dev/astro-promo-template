@@ -8,7 +8,7 @@ const { isWidget = false } = Astro.props;
 ---
 
 <div
-  class="player player--main"
+  class:list={['player player--main', { 'player--widget': isWidget }]}
   data-player
   data-is-widget={isWidget.toString()}
 >

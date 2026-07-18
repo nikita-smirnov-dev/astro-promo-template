@@ -7,7 +7,7 @@
   gap: 24px;
   width: 100%;
 
-  @include mobile {
+  @include small-tablet {
     grid-column: 2 span;
     order: 3;
   }
