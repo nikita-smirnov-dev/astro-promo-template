@@ -2,7 +2,7 @@ import type { PromoDataT } from '@appTypes/promoTypes';
 
 export const promoData: PromoDataT = {
   title: 'Silence Tends to Destroy',
-  plot: 'Юбилейный релиз. 10 лет с момента выхода альбома, заложившего фундамент локальной дэткор-сцены. Тяжелые риффы, пронзительная мелодика и        бескомпромиссная агрессия, которые определили эпоху и до сих пор отзываются эхом в стенах бетонных залов.',
+  plot: 'Юбилейный релиз. 10 лет с момента выхода альбома, заложившего фундамент локальной progressive metalcore сцены. Тяжелые риффы, пронзительная мелодика и        бескомпромиссная агрессия, которые определили эпоху и до сих пор отзываются эхом в стенах бетонных залов.',
   poster: 'img/poster/poster-bg.png',
   posterMobile: 'img/poster/poster-mobile.png',
   cover: 'img/poster/cover.jpg',
