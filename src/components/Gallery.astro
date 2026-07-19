@@ -1,0 +1,14 @@
+---
+interface Props {
+  id: string;
+  class: string;
+}
+
+const { id, class: extraClass = '' } = Astro.props;
+---
+
+<section id={id} class:list={extraClass}>
+  <div>
+    <h1>Gallery</h1>
+  </div>
+</section>
