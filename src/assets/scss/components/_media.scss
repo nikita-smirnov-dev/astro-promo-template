@@ -7,7 +7,13 @@
     align-items: center;
     flex-direction: column;
     text-align: center;
-    height: 100dvh;
+    min-height: 85dvh;
+
+    @include mobile {
+      height: auto;
+      min-height: 100%;
+      margin-bottom: var(--spacing-20);
+    }
   }
 
   &__inner {

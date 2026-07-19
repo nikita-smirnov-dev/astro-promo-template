@@ -1,6 +1,7 @@
 ---
 import { promoData } from '@data/promo';
 import Button from './Button.astro';
+import Dashboard from '@components/Dashboard.astro';
 import MainTitle from './MainTitle.astro';
 
 interface Props {
@@ -18,8 +19,9 @@ const { id, class: extraClass = '' } = Astro.props;
       <p class="hero__description">{promoData.plot}</p>
     </div>
     <div class="hero__actions">
-      <Button title="О релизе" extraClass="btn--primary" href="#details" />
-      <Button title="Слушать релиз" extraClass="btn--primary" href="#media" />
+      <Dashboard />
+      <!-- <Button title="О релизе" extraClass="btn--primary" href="#details" />
+      <Button title="Слушать релиз" extraClass="btn--primary" href="#media" /> -->
     </div>
     <a
       href="https://vk.ru/sttdmetal"
