@@ -79,6 +79,11 @@ img {
     padding-top: var(--spacing-40);
     padding-bottom: var(--spacing-40);
   }
+
+  @media (orientation: landscape) and (max-height: 500px) {
+    padding-top: 20px;
+    padding-bottom: 20px;
+  }
 }
 
 .visually-hidden {

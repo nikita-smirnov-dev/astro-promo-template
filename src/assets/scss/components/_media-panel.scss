@@ -19,6 +19,10 @@
   border: 1px solid rgba(255, 255, 255, 0.05);
   border-radius: 4px;
 
+  @include tablet-to-small {
+    grid-template-columns: 2fr 1fr;
+  }
+
   @include desktop {
     width: 100%;
   }
@@ -39,6 +43,12 @@
     justify-content: flex-start;
     gap: 20px;
 
+    @include tablet-to-small {
+      order: -2;
+      flex-direction: row;
+      align-items: center;
+    }
+
     @include small-mobile {
       align-items: center;
       justify-content: center;
@@ -49,6 +59,11 @@
     width: 150px;
     height: 150px;
     border-radius: 6px;
+
+    @include tablet-to-small {
+      width: 100px;
+      height: 100px;
+    }
   }
 
   &__content {
@@ -75,6 +90,12 @@
     display: flex;
     align-items: center;
     justify-content: center;
+
+    @include tablet-to-small {
+      grid-row: span 2;
+      order: -2;
+      height: 100%;
+    }
   }
 
   &__track-list {

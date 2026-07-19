@@ -32,6 +32,11 @@
     @include mobile {
       font-size: var(--font-size-32);
     }
+
+    @media (orientation: landscape) and (max-height: 500px) {
+      font-size: var(--font-size-24);
+      margin-bottom: 8px;
+    }
   }
 
   &__subtitle {
@@ -47,6 +52,11 @@
 
     @include mobile {
       font-size: var(--font-size-20);
+    }
+
+    @media (orientation: landscape) and (max-height: 500px) {
+      font-size: var(--font-size-16);
+      margin-bottom: 12px;
     }
   }
 }
