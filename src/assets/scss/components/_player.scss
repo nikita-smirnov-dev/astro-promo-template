@@ -12,6 +12,10 @@
     order: 3;
   }
 
+  @include xs-mobile {
+    grid-column: 1 span;
+  }
+
   &__top {
     display: flex;
     justify-content: space-between;

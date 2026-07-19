@@ -49,9 +49,10 @@
       align-items: center;
     }
 
-    @include small-mobile {
+    @include xs-mobile {
       align-items: center;
       justify-content: center;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.05);
     }
   }
 
@@ -70,6 +71,10 @@
     text-align: left;
 
     @include small-mobile {
+      text-align: center;
+    }
+
+    @include xs-mobile {
       text-align: center;
     }
   }
