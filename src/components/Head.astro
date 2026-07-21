@@ -1,6 +1,7 @@
 ---
 import '@assets/scss/vendor/normalize.css';
 import '@assets/scss/main.scss';
+import { ClientRouter } from 'astro:transitions';
 
 interface Props {
   title?: string;
@@ -39,6 +40,8 @@ const { title = 'Заголовок сайта', description = '' } = Astro.prop
   <title>{title}</title>
 
   {description && <meta name="description" content={description} />}
+
+  <ClientRouter fallback="animate" />
 
   <script>
     import '@assets/ts/main';

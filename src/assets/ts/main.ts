@@ -1,7 +1,11 @@
-import { initScreenSwitcher } from './components/screenSwitcher';
 import { initRockHand } from './components/rock-hand';
 import { initPlayer } from './components/player';
+import { initWidgetVisibility } from './components/widgetVisibility';
+import { setupWidgetCloseButton } from './utils/setupWidgetCloseButton';
 
-initRockHand();
-initPlayer();
-document.addEventListener('DOMContentLoaded', initScreenSwitcher);
+document.addEventListener('astro:page-load', () => {
+  initRockHand();
+  initPlayer();
+  initWidgetVisibility();
+  setupWidgetCloseButton();
+});

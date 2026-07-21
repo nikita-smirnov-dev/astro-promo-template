@@ -1,49 +1,9 @@
 ---
 import Hero from '@components/Hero.astro';
-import PosterPromo from '@components/PosterPromo.astro';
 import Layout from '@layouts/BaseLayout.astro';
 import { promoData } from '@data/promo';
-import Media from '@components/Media.astro';
-import Details from '@components/Details.astro';
-import RockHand from '@components/RockHand.astro';
-import WidgetPlayer from '@components/WidgetPlayer.astro';
-import Gallery from '@components/Gallery.astro';
-import VideoPlayer from '@components/VideoPlayer.astro';
-import BonusTracks from '@components/BonusTracks.astro';
 ---
 
 <Layout title=`${promoData.title} - ${promoData.releaseName} (10 лет релизу)`>
-  <WidgetPlayer />
-  <PosterPromo
-    imageUrl={promoData.poster}
-    imageMobileUrl={promoData.posterMobile}
-  />
-  <Hero
-    id="screen-hero"
-    class="app-screen hero section-offset screen-section"
-  />
-  <Media
-    id="screen-media"
-    class="app-screen media section-offset screen-section hidden"
-    data={promoData}
-  />
-  <Details
-    id="screen-details"
-    class="app-screen details section-offset screen-section hidden"
-    data={promoData}
-  />
-  <Gallery
-    id="screen-gallery"
-    class="app-screen gallery section-offset screen-section hidden"
-  />
-  <VideoPlayer
-    id="screen-video"
-    class="app-screen video-player section-offset screen-section hidden"
-  />
-  <BonusTracks
-    id="screen-bonus-tracks"
-    class="app-screen bonus-tracks section-offset screen-section hidden"
-  />
-  <RockHand />
-  <audio id="main-audio" data-main-audio src="" style="display: none;"></audio>
+  <Hero />
 </Layout>

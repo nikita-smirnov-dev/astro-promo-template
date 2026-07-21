@@ -9,6 +9,7 @@
   gap: var(--spacing-40);
 
   &__tile {
+    z-index: 100;
     display: flex;
     align-items: center;
     justify-content: center;

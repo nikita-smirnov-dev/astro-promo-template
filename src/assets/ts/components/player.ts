@@ -1,3 +1,7 @@
+let currentIndex = -1;
+let isPlaying = false;
+let globalTrackSources: string[] = [];
+
 export const initPlayer = () => {
   const audio = document.querySelector('[data-main-audio]') as HTMLAudioElement;
   const trackItems = document.querySelectorAll('[data-track-item]');
@@ -36,16 +40,47 @@ export const initPlayer = () => {
   const widgetPlayPrev = widgetContainer?.querySelector('[data-prev]');
   const widgetPlayNext = widgetContainer?.querySelector('[data-next]');
 
-  if (!audio || (!mainContainer && !widgetContainer) || trackItems.length === 0)
-    return;
+  if (!audio || (!mainContainer && !widgetContainer)) return;
 
-  let currentIndex = -1;
-  let isPlaying = false;
+  // let currentIndex = -1;
+  // let isPlaying = false;
+
+  // Если мы зашли на страницу, где есть список треков, запоминаем их адреса в память файла
+  if (trackItems.length > 0) {
+    globalTrackSources = Array.from(trackItems).map(
+      (item) => (item as HTMLElement).dataset.src || '',
+    );
+  }
 
   const togglePlayUI = (playing: boolean) => {
     if (mainPlayBtn) mainPlayBtn.classList.toggle('is-playing', playing);
     if (widgetPlayBtn) widgetPlayBtn.classList.toggle('is-playing', playing);
   };
+
+  // Мгновенно синхронизируем кнопки при открытии новой страницы под текущую реальность
+  togglePlayUI(isPlaying);
+
+  // if (audio.src && trackItems.length > 0) {
+  //   trackItems.forEach((item, idx) => {
+  //     if (
+  //       (item as HTMLElement).dataset.src &&
+  //       audio.src.includes((item as HTMLElement).dataset.src!)
+  //     ) {
+  //       currentIndex = idx;
+  //     }
+  //   });
+  // }
+
+  // Синхронизируем и снимаем класс активного трека в списке
+  const syncActiveTrackUI = () => {
+    if (trackItems.length > 0) {
+      trackItems.forEach((item, idx) => {
+        const shouldBeActive = idx === currentIndex && isPlaying;
+        (item as HTMLElement).classList.toggle('is-active', shouldBeActive);
+      });
+    }
+  };
+  syncActiveTrackUI();
 
   function formatTime(time = 0) {
     if (!Number.isFinite(time)) return '0:00';
@@ -58,21 +93,19 @@ export const initPlayer = () => {
     isPlaying = false;
     togglePlayUI(false);
 
-    const currentItem = trackItems[currentIndex] as HTMLElement;
-    currentItem?.classList.remove('is-active');
+    syncActiveTrackUI();
   });
 
   audio.addEventListener('play', () => {
     isPlaying = true;
     togglePlayUI(true);
 
-    const currentItem = trackItems[currentIndex] as HTMLElement;
-    currentItem?.classList.add('is-active');
+    syncActiveTrackUI();
   });
 
   const loadPlayTrack = (index: number, isToggle = false) => {
     if (index === currentIndex && isToggle) {
-      if (isPlaying) {
+      if (!audio.paused) {
         audio.pause();
       } else {
         audio.play().catch(() => {});
@@ -81,17 +114,19 @@ export const initPlayer = () => {
     }
 
     currentIndex = index;
-    const currentItem = trackItems[currentIndex] as HTMLElement;
-    if (!currentItem) return;
+    // Если список есть на странице (мы в плеере), берем src оттуда
+    if (trackItems.length > 0 && trackItems[currentIndex]) {
+      const currentItem = trackItems[currentIndex] as HTMLElement;
+      audio.src = currentItem.dataset.src || '';
+    } else {
+      // Если списка на странице нет (мы в виджете), берем сохраненный адрес из памяти файла!
+      const savedSrc = globalTrackSources[currentIndex];
+      if (savedSrc) audio.src = savedSrc;
+    }
 
-    trackItems.forEach((item) => {
-      (item as HTMLElement).classList.remove('is-active');
-    });
-    currentItem.classList.add('is-active');
-
-    const trackSrc = currentItem.dataset.src || '';
-    audio.src = trackSrc;
-    audio.play().catch(() => {});
+    if (audio.src) {
+      audio.play().catch(() => {});
+    }
   };
 
   mainPlayBtn?.addEventListener('click', () => {
@@ -102,16 +137,18 @@ export const initPlayer = () => {
   mainPlayNext?.addEventListener('click', (e) => {
     e.preventDefault();
     e.stopPropagation();
+    if (globalTrackSources.length === 0) return;
     let nextIndex = currentIndex + 1;
-    if (nextIndex >= trackItems.length) nextIndex = 0;
+    if (nextIndex >= globalTrackSources.length) nextIndex = 0;
     loadPlayTrack(nextIndex);
   });
 
   mainPlayPrev?.addEventListener('click', (e) => {
     e.preventDefault();
     e.stopPropagation();
+    if (globalTrackSources.length === 0) return;
     let prevIndex = currentIndex - 1;
-    if (prevIndex < 0) prevIndex = trackItems.length - 1;
+    if (prevIndex < 0) prevIndex = globalTrackSources.length - 1;
     loadPlayTrack(prevIndex);
   });
 
@@ -123,16 +160,18 @@ export const initPlayer = () => {
   widgetPlayNext?.addEventListener('click', (e) => {
     e.preventDefault();
     e.stopPropagation();
+    if (globalTrackSources.length === 0) return;
     let nextIndex = currentIndex + 1;
-    if (nextIndex >= trackItems.length) nextIndex = 0;
+    if (nextIndex >= globalTrackSources.length) nextIndex = 0;
     loadPlayTrack(nextIndex);
   });
 
   widgetPlayPrev?.addEventListener('click', (e) => {
     e.preventDefault();
     e.stopPropagation();
+    if (globalTrackSources.length === 0) return;
     let prevIndex = currentIndex - 1;
-    if (prevIndex < 0) prevIndex = trackItems.length - 1;
+    if (prevIndex < 0) prevIndex = globalTrackSources.length - 1;
     loadPlayTrack(prevIndex);
   });
 
@@ -196,8 +235,9 @@ export const initPlayer = () => {
   });
 
   audio.addEventListener('ended', () => {
+    if (globalTrackSources.length === 0) return;
     let nextIndex = currentIndex + 1;
-    if (nextIndex >= trackItems.length) nextIndex = 0;
+    if (nextIndex >= globalTrackSources.length) nextIndex = 0;
     loadPlayTrack(nextIndex);
   });
 };

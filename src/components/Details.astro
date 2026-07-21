@@ -5,18 +5,16 @@ import MainTitle from './MainTitle.astro';
 import type { PromoDataT } from '@appTypes/promoTypes';
 
 interface Props {
-  id: string;
-  class: string;
   data: PromoDataT;
 }
 
-const { id, class: extraClass = '', data } = Astro.props;
+const { data } = Astro.props;
 ---
 
-<section id={id} class:list={extraClass}>
+<section class="section-offset">
   <div class="details__container container">
     <div class="details__inner">
-      <Button extraClass="details__btn btn--secondary" href="#hero">
+      <Button extraClass="details__btn btn--secondary" href="/">
         <Icon name="arrow-back" class="details__btn-icon" />
         <span class="details__btn-text">Назад</span>
       </Button>

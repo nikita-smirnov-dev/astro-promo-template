@@ -1,0 +1,10 @@
+---
+import Layout from '@layouts/BaseLayout.astro';
+import Details from '@components/Details.astro';
+
+import { promoData } from '@data/promo';
+---
+
+<Layout title="info">
+  <Details data={promoData} />
+</Layout>
