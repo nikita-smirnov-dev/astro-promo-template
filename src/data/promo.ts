@@ -215,5 +215,34 @@ export const promoData: PromoDataT = {
       fileUrl: '/audio/unreleased/unreleased-song-13.mp3',
       category: 'unreleased',
     },
+
+    {
+      id: 'remix-1',
+      title: 'Cold Sky (Live in&nbsp;Kosmonavt 2016)',
+      duration: '3:28',
+      fileUrl: '/audio/remixes/remix-song-1.mp3',
+      category: 'remixes',
+    },
+    {
+      id: 'remix-2',
+      title: 'Depriving. Regret (Free sky mix)',
+      duration: '4:27',
+      fileUrl: '/audio/remixes/remix-song-2.mp3',
+      category: 'remixes',
+    },
+    {
+      id: 'remix-3',
+      title: 'Depriving. Regret (Remix by&nbsp;strance guys)',
+      duration: '4:11',
+      fileUrl: '/audio/remixes/remix-song-3.mp3',
+      category: 'remixes',
+    },
+    {
+      id: 'remix-4',
+      title: 'Time (mix atmosphere)',
+      duration: '6:03',
+      fileUrl: '/audio/remixes/remix-song-4.mp3',
+      category: 'remixes',
+    },
   ],
 };
