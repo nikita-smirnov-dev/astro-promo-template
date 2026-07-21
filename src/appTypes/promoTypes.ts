@@ -19,10 +19,11 @@ export const BasePromoSchema = z.object({
   tracks: z
     .array(
       z.object({
-        id: z.number(),
+        id: z.string(),
         title: z.string(),
         duration: z.string(),
         fileUrl: z.string(),
+        category: z.string(),
       }),
     )
     .optional(),

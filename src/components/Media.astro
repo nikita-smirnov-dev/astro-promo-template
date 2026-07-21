@@ -14,6 +14,7 @@ interface Props {
 const { data } = Astro.props;
 
 const cover = poster[`/src/assets/${data.cover}`]?.default;
+const mainTracks = data.tracks?.filter((t) => t.category === 'main');
 ---
 
 <section class="section-offset">
@@ -49,7 +50,7 @@ const cover = poster[`/src/assets/${data.cover}`]?.default;
       <div class="media-panel__tracks">
         <ul class="media-panel__track-list list-reset">
           {
-            data.tracks?.map((track, idx) => (
+            mainTracks?.map((track, idx) => (
               <li
                 class="media-panel__track-item"
                 data-src={track.fileUrl}

@@ -42,10 +42,6 @@ export const initPlayer = () => {
 
   if (!audio || (!mainContainer && !widgetContainer)) return;
 
-  // let currentIndex = -1;
-  // let isPlaying = false;
-
-  // Если мы зашли на страницу, где есть список треков, запоминаем их адреса в память файла
   if (trackItems.length > 0) {
     globalTrackSources = Array.from(trackItems).map(
       (item) => (item as HTMLElement).dataset.src || '',
@@ -57,21 +53,8 @@ export const initPlayer = () => {
     if (widgetPlayBtn) widgetPlayBtn.classList.toggle('is-playing', playing);
   };
 
-  // Мгновенно синхронизируем кнопки при открытии новой страницы под текущую реальность
   togglePlayUI(isPlaying);
 
-  // if (audio.src && trackItems.length > 0) {
-  //   trackItems.forEach((item, idx) => {
-  //     if (
-  //       (item as HTMLElement).dataset.src &&
-  //       audio.src.includes((item as HTMLElement).dataset.src!)
-  //     ) {
-  //       currentIndex = idx;
-  //     }
-  //   });
-  // }
-
-  // Синхронизируем и снимаем класс активного трека в списке
   const syncActiveTrackUI = () => {
     if (trackItems.length > 0) {
       trackItems.forEach((item, idx) => {
@@ -114,12 +97,10 @@ export const initPlayer = () => {
     }
 
     currentIndex = index;
-    // Если список есть на странице (мы в плеере), берем src оттуда
     if (trackItems.length > 0 && trackItems[currentIndex]) {
       const currentItem = trackItems[currentIndex] as HTMLElement;
       audio.src = currentItem.dataset.src || '';
     } else {
-      // Если списка на странице нет (мы в виджете), берем сохраненный адрес из памяти файла!
       const savedSrc = globalTrackSources[currentIndex];
       if (savedSrc) audio.src = savedSrc;
     }
