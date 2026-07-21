@@ -244,5 +244,49 @@ export const promoData: PromoDataT = {
       fileUrl: '/audio/remixes/remix-song-4.mp3',
       category: 'remixes',
     },
+
+    {
+      id: 'instrumental-1',
+      title:
+        'Cold Sky (Instrumental) Your Death&nbsp;&mdash; My&nbsp;Salvation',
+      duration: '0:45',
+      fileUrl: '/audio/instrumental/instrumental-song-1.mp3',
+      category: 'instrumental',
+    },
+    {
+      id: 'instrumental-2',
+      title: 'Cruelshow (Instrumental)',
+      duration: '3:03',
+      fileUrl: '/audio/instrumental/instrumental-song-2.mp3',
+      category: 'instrumental',
+    },
+    {
+      id: 'instrumental-3',
+      title: 'Embrace of Sorrow (Instrumental)',
+      duration: '4:23',
+      fileUrl: '/audio/instrumental/instrumental-song-3.mp3',
+      category: 'instrumental',
+    },
+    {
+      id: 'instrumental-4',
+      title: 'Dead Honesty (Instrumental)',
+      duration: '3:19',
+      fileUrl: '/audio/instrumental/instrumental-song-4.mp3',
+      category: 'instrumental',
+    },
+    {
+      id: 'instrumental-5',
+      title: 'Cold Sky (Instrumental)',
+      duration: '3:22',
+      fileUrl: '/audio/instrumental/instrumental-song-5.mp3',
+      category: 'instrumental',
+    },
+    {
+      id: 'instrumental-6',
+      title: 'Time (Instrumental)',
+      duration: '5:31',
+      fileUrl: '/audio/instrumental/instrumental-song-6.mp3',
+      category: 'instrumental',
+    },
   ],
 };
