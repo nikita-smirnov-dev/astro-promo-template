@@ -10,7 +10,7 @@ const { data } = Astro.props;
 const remixTracks = data.tracks?.filter((t) => t.category === 'remixes');
 ---
 
-<div class="media-panel__tracks">
+<div class="media-panel__tracks" data-category-wrapper="remixes">
   <ul class="media-panel__track-list list-reset">
     {
       remixTracks?.map((track, idx) => (

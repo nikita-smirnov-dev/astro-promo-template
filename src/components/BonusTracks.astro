@@ -1,23 +1,41 @@
 ---
-// import { Image } from 'astro:assets';
-// import { Icon } from 'astro-icon/components';
-// import Button from './Button.astro';
-import { poster } from '@data/images';
-import type { PromoDataT } from '@appTypes/promoTypes';
 import { promoData } from '@data/promo';
 import DemoTracks from './DemoTracks.astro';
-import UnreleasedTracks from './DemoTracks.astro';
-import RemixesTracks from './DemoTracks.astro';
-import InstrumentalTracks from './DemoTracks.astro';
-// import MainTitle from './MainTitle.astro';
-// import Player from './Player.astro';
+import UnreleasedTracks from './UnreleasedTracks.astro';
+import RemixesTracks from './RemixesTracks.astro';
+import InstrumentalTracks from './InstrumentalTracks.astro';
+import StudioMixer from './StudioMixer.astro';
+import Player from './Player.astro';
+import ButtonGoBack from './ButtonGoBack.astro';
+import MainTitle from './MainTitle.astro';
 ---
 
 <section class="section-offset">
-  <div class="media__container container">
-    <!-- <DemoTracks data={promoData} />
-    <UnreleasedTracks data={promoData} />
-    <RemixesTracks data={promoData} />
-    <InstrumentalTracks data={promoData} /> -->
+  <div class="bonus-track__container container" data-player-context="bonus">
+    <ButtonGoBack />
+    <MainTitle title="Bonus Tracks" />
+    <div class="bonus-track__content">
+      <div class="bonus-track__control">
+        <StudioMixer />
+        <div data-current-context="bonus">
+          <Player />
+        </div>
+      </div>
+      <div class="media-panel__tracks--bonus">
+        <DemoTracks data={promoData} />
+      </div>
+
+      <div class="media-panel__tracks--bonus">
+        <UnreleasedTracks data={promoData} />
+      </div>
+
+      <div class="media-panel__tracks--bonus">
+        <RemixesTracks data={promoData} />
+      </div>
+
+      <div class="media-panel__tracks--bonus">
+        <InstrumentalTracks data={promoData} />
+      </div>
+    </div>
   </div>
 </section>

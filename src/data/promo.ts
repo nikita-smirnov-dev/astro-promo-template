@@ -21,7 +21,7 @@ export const promoData: PromoDataT = {
       id: 'main-1',
       title: 'Your Death is My Salvation',
       duration: '0:45',
-      fileUrl: '/audio/main/Your Death is My Salvation.mp3',
+      fileUrl: '/audio/main/Your-Death-is-My-Salvation.mp3',
       category: 'main',
     },
     {
@@ -62,28 +62,28 @@ export const promoData: PromoDataT = {
 
     {
       id: 'demo-1',
-      title: '10&nbsp;track (demo track Time)',
+      title: '10 track (demo track Time)',
       duration: '4:31',
       fileUrl: '/audio/demo/demo-time-1.mp3',
       category: 'demo',
     },
     {
       id: 'demo-2',
-      title: '101 (demo version in&nbsp;studio track Time)',
+      title: '101 (demo version instudio track Time)',
       duration: '4:24',
       fileUrl: '/audio/demo/demo-time-2.mp3',
       category: 'demo',
     },
     {
       id: 'demo-3',
-      title: 'Cold Sky (demo&nbsp;1)',
+      title: 'Cold Sky (demo1)',
       duration: '3:28',
       fileUrl: '/audio/demo/demo-gold-sky-1.mp3',
       category: 'demo',
     },
     {
       id: 'demo-4',
-      title: '11&nbsp;track (demo track Cold sky)',
+      title: '11 track (demo track Cold sky)',
       duration: '3:19',
       fileUrl: '/audio/demo/demo-gold-sky-2.mp3',
       category: 'demo',
@@ -111,14 +111,14 @@ export const promoData: PromoDataT = {
     },
     {
       id: 'demo-8',
-      title: 'Мир Нас Не&nbsp;Забудет (demo track Cruelshow)',
+      title: 'Мир Нас НеЗабудет (demo track Cruelshow)',
       duration: '3:03',
       fileUrl: '/audio/demo/demo-cruelshow-2.mp3',
       category: 'demo',
     },
     {
       id: 'demo-9',
-      title: 'Падение в&nbsp;пустоту (demo version Embrace of&nbsp;sorrow)',
+      title: 'Падение впустоту (demo version Embrace ofsorrow)',
       duration: '4:24',
       fileUrl: '/audio/demo/demo-embrace of sorrow.mp3',
       category: 'demo',
@@ -126,7 +126,7 @@ export const promoData: PromoDataT = {
 
     {
       id: 'unreleased-1',
-      title: 'no&nbsp;name track&nbsp;1',
+      title: 'noname track1',
       duration: '2:33',
       fileUrl: '/audio/unreleased/unreleased-song-1.mp3',
       category: 'unreleased',
@@ -140,35 +140,35 @@ export const promoData: PromoDataT = {
     },
     {
       id: 'unreleased-3',
-      title: 'Зановес (demo track in&nbsp;studio 2016)',
+      title: 'Зановес (demo track instudio 2016)',
       duration: '3:15',
       fileUrl: '/audio/unreleased/unreleased-song-3.mp3',
       category: 'unreleased',
     },
     {
       id: 'unreleased-4',
-      title: '12 2&nbsp;новая (demo Depriving. Regret)',
+      title: '12 2новая (demo Depriving. Regret)',
       duration: '4:33',
       fileUrl: '/audio/unreleased/unreleased-song-4.mp3',
       category: 'unreleased',
     },
     {
       id: 'unreleased-5',
-      title: '12&nbsp;трек (demo version track Depriving. Regret)',
+      title: '12трек (demo version track Depriving. Regret)',
       duration: '4:05',
       fileUrl: '/audio/unreleased/unreleased-song-5.mp3',
       category: 'unreleased',
     },
     {
       id: 'unreleased-6',
-      title: '13&nbsp;трек (версия&nbsp;3)',
+      title: '13трек (версия3)',
       duration: '4:28',
       fileUrl: '/audio/unreleased/unreleased-song-6.mp3',
       category: 'unreleased',
     },
     {
       id: 'unreleased-7',
-      title: '13&nbsp;трекан (версия&nbsp;1)',
+      title: '13трекан (версия1)',
       duration: '4:07',
       fileUrl: '/audio/unreleased/unreleased-song-7.mp3',
       category: 'unreleased',
@@ -182,7 +182,7 @@ export const promoData: PromoDataT = {
     },
     {
       id: 'unreleased-9',
-      title: '14&nbsp;трекан (demo&nbsp;2)',
+      title: '14трекан (demo2)',
       duration: '5:07',
       fileUrl: '/audio/unreleased/unreleased-song-9.mp3',
       category: 'unreleased',
@@ -218,7 +218,7 @@ export const promoData: PromoDataT = {
 
     {
       id: 'remix-1',
-      title: 'Cold Sky (Live in&nbsp;Kosmonavt 2016)',
+      title: 'Cold Sky (Live inKosmonavt 2016)',
       duration: '3:28',
       fileUrl: '/audio/remixes/remix-song-1.mp3',
       category: 'remixes',
@@ -232,7 +232,7 @@ export const promoData: PromoDataT = {
     },
     {
       id: 'remix-3',
-      title: 'Depriving. Regret (Remix by&nbsp;strance guys)',
+      title: 'Depriving. Regret (Remix bystrance guys)',
       duration: '4:11',
       fileUrl: '/audio/remixes/remix-song-3.mp3',
       category: 'remixes',
@@ -247,8 +247,7 @@ export const promoData: PromoDataT = {
 
     {
       id: 'instrumental-1',
-      title:
-        'Cold Sky (Instrumental) Your Death&nbsp;&mdash; My&nbsp;Salvation',
+      title: 'Cold Sky (Instrumental) Your Death&mdash; MySalvation',
       duration: '0:45',
       fileUrl: '/audio/instrumental/instrumental-song-1.mp3',
       category: 'instrumental',

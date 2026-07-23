@@ -12,7 +12,7 @@ const unreleasedTracks = data.tracks?.filter(
 );
 ---
 
-<div class="media-panel__tracks">
+<div class="media-panel__tracks" data-category-wrapper="unreleased">
   <ul class="media-panel__track-list list-reset">
     {
       unreleasedTracks?.map((track, idx) => (

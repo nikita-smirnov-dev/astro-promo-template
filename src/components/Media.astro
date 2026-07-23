@@ -1,11 +1,10 @@
 ---
 import { Image } from 'astro:assets';
-import { Icon } from 'astro-icon/components';
-import Button from './Button.astro';
 import { poster } from '@data/images';
 import type { PromoDataT } from '@appTypes/promoTypes';
 import MainTitle from './MainTitle.astro';
 import Player from './Player.astro';
+import ButtonGoBack from './ButtonGoBack.astro';
 
 interface Props {
   data: PromoDataT;
@@ -19,12 +18,7 @@ const mainTracks = data.tracks?.filter((t) => t.category === 'main');
 
 <section class="section-offset">
   <div class="media__container container">
-    <div class="media__inner">
-      <Button extraClass="media__btn btn--secondary" href="/">
-        <Icon name="arrow-back" class="media__btn-icon" />
-        <span class="media__btn-text">Назад</span>
-      </Button>
-    </div>
+    <ButtonGoBack />
     <MainTitle title="Official Tracklist" />
     <div class="media-panel" data-media>
       <div class="media-panel__meta">
@@ -45,7 +39,9 @@ const mainTracks = data.tracks?.filter((t) => t.category === 'main');
         </div>
       </div>
 
-      <Player isWidget={false} />
+      <div data-current-context="main">
+        <Player isWidget={false} />
+      </div>
 
       <div class="media-panel__tracks">
         <ul class="media-panel__track-list list-reset">
