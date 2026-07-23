@@ -57,15 +57,11 @@
     width: 100%;
     max-width: 800px;
     padding: 25px 35px;
-    background: rgba(0, 0, 0, 0.4);
     border: 1px solid rgba(255, 255, 255, 0.05);
     border-bottom: 2px solid var(--accent-color);
     border-radius: 4px;
-    background: linear-gradient(
-      135deg,
-      rgba(10, 10, 10, 0.95) 0%,
-      rgba(20, 20, 20, 0.8) 100%
-    );
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(10px);
   }
 
   &__list {

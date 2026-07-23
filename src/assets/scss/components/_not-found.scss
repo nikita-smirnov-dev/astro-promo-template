@@ -1,0 +1,45 @@
+@use '../mixins/disable-mob-hover' as *;
+
+.not-found {
+  display: flex;
+  align-items: start;
+  justify-content: center;
+  height: 85dvh;
+
+  &__inner {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: var(--spacing-50);
+    padding: 20px;
+  }
+
+  &__icon {
+    display: inline-flex;
+    width: 90px;
+    height: 90px;
+    fill: currentcolor;
+  }
+
+  &__title {
+    margin: 0;
+    color: var(--white-color);
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.8);
+  }
+
+  &__descr {
+    margin: 0;
+    font-size: var(--font-size-20);
+    text-align: center;
+    color: var(--white-color);
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.8);
+  }
+
+  &__link {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 300px;
+  }
+}

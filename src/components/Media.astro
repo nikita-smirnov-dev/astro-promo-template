@@ -46,18 +46,22 @@ const mainTracks = data.tracks?.filter((t) => t.category === 'main');
       <div class="media-panel__tracks">
         <ul class="media-panel__track-list list-reset">
           {
-            mainTracks?.map((track, idx) => (
-              <li
-                class="media-panel__track-item"
-                data-src={track.fileUrl}
-                data-track-item
-              >
-                <span class="media-panel__track-number">
-                  {String(idx + 1).padStart(2, '0') + ' '}
-                </span>
-                <span class="media-panel__track-name">{track.title}</span>
-              </li>
-            ))
+            mainTracks && mainTracks?.length > 0 ? (
+              mainTracks?.map((track, idx) => (
+                <li
+                  class="media-panel__track-item"
+                  data-src={track.fileUrl}
+                  data-track-item
+                >
+                  <span class="media-panel__track-number">
+                    {String(idx + 1).padStart(2, '0') + ' '}
+                  </span>
+                  <span class="media-panel__track-name">{track.title}</span>
+                </li>
+              ))
+            ) : (
+              <p>Трек-лист временно отсутствует!</p>
+            )
           }
         </ul>
       </div>
