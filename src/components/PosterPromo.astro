@@ -1,6 +1,6 @@
 ---
 import { Image } from 'astro:assets';
-import { poster } from '@data/images';
+import { dataImage } from '@data/images';
 import type { PosterUrl, PosterMobileUrl } from '@appTypes/promoTypes';
 
 interface Props {
@@ -10,8 +10,8 @@ interface Props {
 
 const { imageUrl, imageMobileUrl } = Astro.props;
 
-const cover = poster[`/src/assets/${imageUrl}`]?.default;
-const coverMobile = poster[`/src/assets/${imageMobileUrl}`]?.default;
+const cover = dataImage[`/src/assets/${imageUrl}`]?.default;
+const coverMobile = dataImage[`/src/assets/${imageMobileUrl}`]?.default;
 ---
 
 <div class="poster">

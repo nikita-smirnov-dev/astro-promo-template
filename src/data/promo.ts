@@ -288,4 +288,156 @@ export const promoData: PromoDataT = {
       category: 'instrumental',
     },
   ],
+  photos: [
+    {
+      id: 1,
+      title: 'Дедкор группа на сцене и в жизни',
+      src: 'img/band-photos/band-photo-01',
+    },
+    {
+      id: 2,
+      title: 'Дедкор группа на сцене и в жизни',
+      src: 'img/band-photos/band-photo-02',
+    },
+    {
+      id: 3,
+      title: 'Дедкор группа на сцене и в жизни',
+      src: 'img/band-photos/band-photo-03',
+    },
+    {
+      id: 4,
+      title: 'Дедкор группа на сцене и в жизни',
+      src: 'img/band-photos/band-photo-04',
+    },
+    {
+      id: 5,
+      title: 'Дедкор группа на сцене и в жизни',
+      src: 'img/band-photos/band-photo-05',
+    },
+    {
+      id: 6,
+      title: 'Дедкор группа на сцене и в жизни',
+      src: 'img/band-photos/band-photo-06',
+    },
+    {
+      id: 7,
+      title: 'Дедкор группа на сцене и в жизни',
+      src: 'img/band-photos/band-photo-07',
+    },
+    {
+      id: 8,
+      title: 'Дедкор группа на сцене и в жизни',
+      src: 'img/band-photos/band-photo-08',
+    },
+    {
+      id: 9,
+      title: 'Дедкор группа на сцене и в жизни',
+      src: 'img/band-photos/band-photo-09',
+    },
+    {
+      id: 10,
+      title: 'Дедкор группа на сцене и в жизни',
+      src: 'img/band-photos/band-photo-10',
+    },
+    {
+      id: 11,
+      title: 'Дедкор группа на сцене и в жизни',
+      src: 'img/band-photos/band-photo-11',
+    },
+    {
+      id: 12,
+      title: 'Дедкор группа на сцене и в жизни',
+      src: 'img/band-photos/band-photo-12',
+    },
+    {
+      id: 13,
+      title: 'Дедкор группа на сцене и в жизни',
+      src: 'img/band-photos/band-photo-13',
+    },
+    {
+      id: 14,
+      title: 'Дедкор группа на сцене и в жизни',
+      src: 'img/band-photos/band-photo-14',
+    },
+    {
+      id: 15,
+      title: 'Дедкор группа на сцене и в жизни',
+      src: 'img/band-photos/band-photo-15',
+    },
+    {
+      id: 16,
+      title: 'Дедкор группа на сцене и в жизни',
+      src: 'img/band-photos/band-photo-16',
+    },
+    {
+      id: 17,
+      title: 'Дедкор группа на сцене и в жизни',
+      src: 'img/band-photos/band-photo-17',
+    },
+    {
+      id: 18,
+      title: 'Дедкор группа на сцене и в жизни',
+      src: 'img/band-photos/band-photo-18',
+    },
+    {
+      id: 19,
+      title: 'Дедкор группа на сцене и в жизни',
+      src: 'img/band-photos/band-photo-19',
+    },
+    {
+      id: 20,
+      title: 'Дедкор группа на сцене и в жизни',
+      src: 'img/band-photos/band-photo-20',
+    },
+    {
+      id: 21,
+      title: 'Дедкор группа на сцене и в жизни',
+      src: 'img/band-photos/band-photo-21',
+    },
+    {
+      id: 22,
+      title: 'Дедкор группа на сцене и в жизни',
+      src: 'img/band-photos/band-photo-22',
+    },
+    {
+      id: 23,
+      title: 'Дедкор группа на сцене и в жизни',
+      src: 'img/band-photos/band-photo-23',
+    },
+    {
+      id: 24,
+      title: 'Дедкор группа на сцене и в жизни',
+      src: 'img/band-photos/band-photo-24',
+    },
+    {
+      id: 25,
+      title: 'Дедкор группа на сцене и в жизни',
+      src: 'img/band-photos/band-photo-25',
+    },
+    {
+      id: 26,
+      title: 'Дедкор группа на сцене и в жизни',
+      src: 'img/band-photos/band-photo-26',
+    },
+    {
+      id: 27,
+      title: 'Дедкор группа на сцене и в жизни',
+      src: 'img/band-photos/band-photo-27',
+    },
+    {
+      id: 28,
+      title: 'Дедкор группа на сцене и в жизни',
+      src: 'img/band-photos/band-photo-28',
+    },
+    {
+      id: 29,
+      title: 'Дедкор группа на сцене и в жизни',
+      src: 'img/band-photos/band-photo-29',
+    },
+    {
+      id: 30,
+      title: 'Дедкор группа на сцене и в жизни',
+      src: 'img/band-photos/band-photo-30',
+    },
+  ],
 };

@@ -27,6 +27,15 @@ export const BasePromoSchema = z.object({
       }),
     )
     .optional(),
+  photos: z
+    .array(
+      z.object({
+        id: z.number(),
+        title: z.string(),
+        src: z.string(),
+      }),
+    )
+    .optional(),
 });
 
 export type PromoDataT = z.infer<typeof BasePromoSchema>;

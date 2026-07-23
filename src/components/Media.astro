@@ -1,6 +1,6 @@
 ---
 import { Image } from 'astro:assets';
-import { poster } from '@data/images';
+import { dataImage } from '@data/images';
 import type { PromoDataT } from '@appTypes/promoTypes';
 import MainTitle from './MainTitle.astro';
 import Player from './Player.astro';
@@ -12,7 +12,7 @@ interface Props {
 
 const { data } = Astro.props;
 
-const cover = poster[`/src/assets/${data.cover}`]?.default;
+const cover = dataImage[`/src/assets/${data.cover}`]?.default;
 const mainTracks = data.tracks?.filter((t) => t.category === 'main');
 ---
 

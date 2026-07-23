@@ -1,5 +1,47 @@
-<section>
-  <div>
-    <h1>Photos</h1>
+---
+import { Image } from 'astro:assets';
+import { dataImage } from '@data/images';
+import type { PromoDataT } from '@appTypes/promoTypes';
+
+import MainTitle from './MainTitle.astro';
+import ButtonGoBack from './ButtonGoBack.astro';
+import defaultImage from '@assets/img/no-photo.jpg';
+
+interface Props {
+  data: PromoDataT;
+}
+
+const { data } = Astro.props;
+---
+
+<section class="photos section-offset">
+  <div class="photos__container container">
+    <ButtonGoBack />
+    <MainTitle title="Gallery" />
+    <div class="photos__content">
+      {
+        data.photos && data.photos.length > 0 ? (
+          data.photos.map((photo) => {
+            const photoPath =
+              dataImage[`/src/assets/${photo.src}.jpg`]?.default;
+            const photoBand = photoPath || defaultImage;
+
+            return (
+              <Image
+                class="photos__img"
+                src={photoBand}
+                alt={photo.title}
+                width={600}
+                height={400}
+                format="webp"
+                loading="lazy"
+              />
+            );
+          })
+        ) : (
+          <p>Галерея пуста</p>
+        )
+      }
+    </div>
   </div>
 </section>
