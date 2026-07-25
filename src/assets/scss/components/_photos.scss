@@ -1,4 +1,4 @@
-@use '../mixins/breakpoint.scss' as *;
+@use '../mixins/disable-mob-hover' as *;
 
 .photos {
   &__container {
@@ -8,5 +8,109 @@
     flex-direction: column;
     text-align: center;
     height: 85dvh;
+  }
+
+  &__swiper {
+    width: 100vw;
+    padding: var(--spacing-30) 0;
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+    overflow: hidden;
+    margin-top: auto;
+    mask-image: linear-gradient(
+      to right,
+      transparent 0%,
+      #000 10%,
+      #000 90%,
+      transparent 100%
+    );
+  }
+
+  &__slide {
+    width: auto;
+    height: auto;
+    transition:
+      transform 0.3s ease,
+      opacity 0.3s ease;
+
+    &:not(:global(.swiper-slide-active)) {
+      opacity: 0.3;
+    }
+  }
+
+  &__card {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 45dvh;
+    width: auto;
+    background: #111;
+    border: 1px solid #222;
+    padding: 10px;
+    border-radius: 4px;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.7);
+  }
+
+  &__picture-box {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    width: auto;
+  }
+
+  &__img {
+    width: auto;
+    max-width: 100%;
+    height: 100%;
+    object-fit: contain;
+    border-radius: 2px;
+  }
+
+  &__controls {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--spacing-40);
+    padding-bottom: 20px;
+    width: 100%;
+  }
+
+  &__pagination {
+    position: relative;
+    width: auto;
+    font-size: var(--font-size-16);
+    font-weight: bold;
+    color: var(--accent-color);
+    text-shadow: 0 0 10px rgb(var(--accent-color) / 50%);
+    letter-spacing: 2px;
+    user-select: none;
+
+    :global(.swiper-pagination-current) {
+      color: var(--accent-color);
+      text-shadow: 0 0 10px rgb(var(--accent-color) / 50%);
+    }
+  }
+
+  &__divider {
+    color: var(--accent-color);
+  }
+
+  &__btn {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 44px;
+    height: 44px;
+    cursor: pointer;
+    color: var(--accent-color);
+    opacity: 0.7;
+    transition: opacity 0.3s ease-in-out;
+
+    @include hover {
+      opacity: 1;
+    }
   }
 }

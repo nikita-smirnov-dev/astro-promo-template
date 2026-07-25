@@ -9,6 +9,12 @@
   // z-index: 1;
   overflow: hidden;
   background-color: var(--black-color);
+  transition: filter 0.5s ease-in-out;
+  will-change: filter;
+
+  &--blurred {
+    filter: blur(8px);
+  }
 
   &__bg {
     width: 100%;

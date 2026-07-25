@@ -19,3 +19,5 @@
 @use './components/bonus-tracks' as *;
 @use './components/studio-mixer' as *;
 @use './components/go-back' as *;
+
+@import '../../../node_modules/swiper/swiper-bundle.min.css';

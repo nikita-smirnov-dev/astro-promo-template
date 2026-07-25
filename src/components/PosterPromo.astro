@@ -12,9 +12,12 @@ const { imageUrl, imageMobileUrl } = Astro.props;
 
 const cover = dataImage[`/src/assets/${imageUrl}`]?.default;
 const coverMobile = dataImage[`/src/assets/${imageMobileUrl}`]?.default;
+
+const isGalleryPage =
+  Astro.url.pathname === '/gallery' || Astro.url.pathname === '/gallery/';
 ---
 
-<div class="poster">
+<div class:list={['poster', { 'poster--blurred': isGalleryPage }]}>
   {
     cover && (
       <Image
