@@ -1,0 +1,39 @@
+@use '../mixins/disable-mob-hover' as *;
+@use '../mixins/breakpoint.scss' as *;
+.release-meta {
+  &__cover {
+    width: 150px;
+    height: 150px;
+    margin-bottom: var(--spacing-20);
+    border-radius: 6px;
+
+    @include tablet-to-small {
+      width: 100px;
+      height: 100px;
+    }
+  }
+
+  &__content {
+    text-align: left;
+
+    @include small-mobile {
+      text-align: center;
+    }
+
+    @include xs-mobile {
+      text-align: center;
+    }
+  }
+
+  &__title {
+    margin: 0;
+    margin-bottom: 10px;
+    color: var(--text-color);
+  }
+
+  &__info {
+    margin: 0;
+    margin-bottom: 10px;
+    color: var(--text-color);
+  }
+}

@@ -1,10 +1,10 @@
 ---
-import { Image } from 'astro:assets';
-import { dataImage } from '@data/images';
 import type { PromoDataT } from '@appTypes/promoTypes';
 import MainTitle from './MainTitle.astro';
 import Player from './Player.astro';
 import ButtonGoBack from './ButtonGoBack.astro';
+import ReleaseMeta from './ReleaseMeta.astro';
+import { promoData } from '@data/promo';
 
 interface Props {
   data: PromoDataT;
@@ -12,7 +12,6 @@ interface Props {
 
 const { data } = Astro.props;
 
-const cover = dataImage[`/src/assets/${data.cover}`]?.default;
 const mainTracks = data.tracks?.filter((t) => t.category === 'main');
 ---
 
@@ -22,21 +21,7 @@ const mainTracks = data.tracks?.filter((t) => t.category === 'main');
     <MainTitle title="Official Tracklist" />
     <div class="media-panel" data-media>
       <div class="media-panel__meta">
-        {
-          cover && (
-            <Image
-              src={cover}
-              alt={data.releaseName}
-              class="media-panel__cover"
-              width={200}
-              height={200}
-            />
-          )
-        }
-        <div class="media-panel__content">
-          <h4 class="media-panel__release-title">{data.releaseName}</h4>
-          <p class="media-panel__release-info">{data.releaseYear}</p>
-        </div>
+        <ReleaseMeta data={promoData} />
       </div>
 
       <div data-current-context="main">

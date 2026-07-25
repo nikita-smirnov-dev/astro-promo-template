@@ -120,7 +120,14 @@ const updateUIStates = (playing: boolean, audio: HTMLAudioElement) => {
     '[data-player][data-is-widget="true"]',
   );
 
+  const widgetPlayer = document.querySelector('.widget-player');
+
+  if (widgetPlayer && playing) {
+    widgetPlayer.classList.remove('hidden');
+  }
+
   const mainPlayBtn = mainContainer?.querySelector('[data-play]');
+
   if (mainPlayBtn) {
     mainPlayBtn.classList.toggle(
       'is-playing',

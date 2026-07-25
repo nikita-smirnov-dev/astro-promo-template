@@ -8,6 +8,7 @@ import StudioMixer from './StudioMixer.astro';
 import Player from './Player.astro';
 import ButtonGoBack from './ButtonGoBack.astro';
 import MainTitle from './MainTitle.astro';
+import ReleaseMeta from './ReleaseMeta.astro';
 ---
 
 <section class="section-offset">
@@ -16,7 +17,10 @@ import MainTitle from './MainTitle.astro';
     <MainTitle title="Bonus Tracks" />
     <div class="bonus-track__content">
       <div class="bonus-track__control">
-        <StudioMixer />
+        <div class="bonus-track__inner">
+          <ReleaseMeta data={promoData} />
+          <StudioMixer />
+        </div>
         <div data-current-context="bonus">
           <Player />
         </div>

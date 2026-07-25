@@ -6,6 +6,7 @@ export const promoData: PromoDataT = {
   poster: 'img/poster/poster-bg.png',
   posterMobile: 'img/poster/poster-mobile.png',
   cover: 'img/poster/cover.jpg',
+  coverBonusTrack: 'img/poster/cover-demo.jpg',
   genre: 'Progressive / Melodic Metalcore',
   releaseName: 'Your Death Is My Salvation',
   releaseYear: 2016,
@@ -120,7 +121,7 @@ export const promoData: PromoDataT = {
       id: 'demo-9',
       title: 'Падение впустоту (demo version Embrace ofsorrow)',
       duration: '4:24',
-      fileUrl: '/audio/demo/demo-embrace of sorrow.mp3',
+      fileUrl: '/audio/demo/demo-embrace-of-sorrow.mp3',
       category: 'demo',
     },
 
@@ -247,7 +248,7 @@ export const promoData: PromoDataT = {
 
     {
       id: 'instrumental-1',
-      title: 'Cold Sky (Instrumental) Your Death&mdash; MySalvation',
+      title: 'Your Death MySalvation (Instrumental) ',
       duration: '0:45',
       fileUrl: '/audio/instrumental/instrumental-song-1.mp3',
       category: 'instrumental',

@@ -6,6 +6,7 @@ export const BasePromoSchema = z.object({
   poster: z.string(),
   posterMobile: z.string(),
   cover: z.string(),
+  coverBonusTrack: z.string(),
   genre: z.string(),
   releaseName: z.string(),
   releaseYear: z.number(),

@@ -5,14 +5,9 @@ export const initWidgetVisibility = () => {
   const audio = document.querySelector('[data-main-audio]') as HTMLAudioElement;
 
   if (widgetPlayer && audio) {
-    const currentPath = window.location.pathname;
     const isMusicPlaying = audio.src && !audio.paused;
 
-    if (
-      currentPath !== '/media' &&
-      currentPath !== '/media/' &&
-      isMusicPlaying
-    ) {
+    if (isMusicPlaying) {
       widgetPlayer.classList.remove('hidden');
     } else {
       widgetPlayer.classList.add('hidden');

@@ -1,0 +1,49 @@
+---
+import { Image } from 'astro:assets';
+import { dataImage } from '@data/images';
+import type { PromoDataT } from '@appTypes/promoTypes';
+
+interface Props {
+  data: PromoDataT;
+}
+
+const { data } = Astro.props;
+
+const cover = dataImage[`/src/assets/${data.cover}`]?.default;
+const coverBonusTrack =
+  dataImage[`/src/assets/${data.coverBonusTrack}`]?.default;
+const isBonusTrack =
+  Astro.url.pathname === '/demo' || Astro.url.pathname === '/demo/';
+---
+
+<div class="release-meta">
+  {
+    isBonusTrack
+      ? coverBonusTrack && (
+          <Image
+            src={coverBonusTrack}
+            alt={data.releaseName}
+            class="release-meta__cover"
+            width={200}
+            height={200}
+          />
+        )
+      : cover && (
+          <Image
+            src={cover}
+            alt={data.releaseName}
+            class="release-meta__cover"
+            width={200}
+            height={200}
+          />
+        )
+  }
+  <div class="release-meta__content">
+    <h4 class="release-meta__title">
+      {isBonusTrack ? 'Unreleased & Rarities' : data.releaseName}
+    </h4>
+    <p class="release-meta__info">
+      {isBonusTrack ? 'Demo Compilation' : data.releaseYear}
+    </p>
+  </div>
+</div>
