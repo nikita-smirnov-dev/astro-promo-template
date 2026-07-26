@@ -1,6 +1,4 @@
 ---
-//@ts-nocheck
-import { Image } from 'astro:assets';
 import { dataImage } from '@data/images';
 import type { PromoDataT } from '@appTypes/promoTypes';
 
@@ -17,7 +15,7 @@ const { data } = Astro.props;
 ---
 
 <section class="photos section-offset">
-  <div class="photos__container container">
+  <div class="photos__container container app-screen">
     <ButtonGoBack />
     <MainTitle title="Gallery" />
     <div class="swiper photos__swiper">

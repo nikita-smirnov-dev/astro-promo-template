@@ -3,18 +3,35 @@
 
 .dashboard {
   display: grid;
-  grid-template-columns: repeat(5, 1fr);
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
   align-items: center;
   justify-content: center;
   gap: var(--spacing-40);
+  width: 100%;
+  max-width: 1200px;
+  margin-bottom: var(--spacing-20);
+
+  @include desktop {
+    gap: var(--spacing-10);
+  }
+
+  @include tablet {
+    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+  }
+
+  @include small-tablet {
+    grid-template-columns: 1fr;
+  }
 
   &__tile {
     z-index: 100;
     display: flex;
     align-items: center;
     justify-content: center;
+    justify-self: center;
     position: relative;
-    width: 200px;
+    width: 100%;
+    max-width: 200px;
     height: 200px;
     padding: 30px;
     border-radius: 8px;
@@ -27,6 +44,14 @@
       background 0.3s ease-in-out,
       border-color 0.3s ease-in-out,
       transform 0.3s ease-in-out;
+
+    @include desktop {
+      height: 150px;
+    }
+
+    @include small-tablet {
+      max-width: 400px;
+    }
 
     @include hover {
       background: rgba(255, 255, 255, 0.15);

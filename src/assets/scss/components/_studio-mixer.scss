@@ -1,8 +1,14 @@
 @use '../mixins/disable-mob-hover' as *;
+@use '../mixins/breakpoint.scss' as *;
 
 .studio-mixer {
   width: 75%;
   margin-bottom: 30px;
+
+  @include mobile {
+    width: 100%;
+    padding-top: var(--spacing-20);
+  }
 
   &__title {
     padding-bottom: 8px;

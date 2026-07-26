@@ -7,12 +7,12 @@
   left: 37px;
 
   @include tablet {
-    top: -35px;
+    top: 0px;
     left: 20px;
   }
 
   @include mobile {
-    top: -20px;
+    top: 0;
   }
 
   &__icon {

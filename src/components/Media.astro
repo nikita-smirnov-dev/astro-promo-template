@@ -16,7 +16,7 @@ const mainTracks = data.tracks?.filter((t) => t.category === 'main');
 ---
 
 <section class="section-offset">
-  <div class="media__container container">
+  <div class="media__container container app-screen">
     <ButtonGoBack />
     <MainTitle title="Official Tracklist" />
     <div class="media-panel" data-media>
@@ -28,7 +28,7 @@ const mainTracks = data.tracks?.filter((t) => t.category === 'main');
         <Player isWidget={false} />
       </div>
 
-      <div class="media-panel__tracks">
+      <div class="media-panel__tracks media-panel__tracks--main">
         <ul class="media-panel__track-list list-reset">
           {
             mainTracks && mainTracks?.length > 0 ? (

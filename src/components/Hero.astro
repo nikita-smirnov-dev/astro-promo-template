@@ -1,12 +1,11 @@
 ---
 import { promoData } from '@data/promo';
-import Button from './Button.astro';
 import Dashboard from '@components/Dashboard.astro';
 import MainTitle from './MainTitle.astro';
 ---
 
 <section class="section-offset">
-  <div class="hero__container container">
+  <div class="hero__container container app-screen">
     <div class="hero__content">
       <MainTitle title={promoData.title} subtitle={promoData.releaseName} />
       <p class="hero__description">{promoData.plot}</p>
@@ -14,13 +13,5 @@ import MainTitle from './MainTitle.astro';
     <div class="hero__actions">
       <Dashboard />
     </div>
-    <a
-      href="https://vk.ru/sttdmetal"
-      target="_blank"
-      rel="noopener noreferrer"
-      class="hero__social-link"
-    >
-      VK Community ↗
-    </a>
   </div>
 </section>

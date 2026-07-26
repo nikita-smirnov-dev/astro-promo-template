@@ -7,22 +7,26 @@ export const initGallerySlider = () => {
 
   new Swiper('.photos__swiper', {
     modules: [Navigation, Pagination],
-
-    effect: 'slide',
     grabCursor: true,
     centeredSlides: true,
-    loop: false,
+    loop: true,
+    resistanceRatio: 0.1,
 
     breakpoints: {
       320: {
-        slidesPerView: 1,
-        spaceBetween: 10,
+        slidesPerView: 1.3,
+        spaceBetween: 16,
       },
       768: {
-        slidesPerView: 'auto',
+        slidesPerView: 2.5,
+        spaceBetween: 32,
+      },
+      1200: {
+        slidesPerView: 2.5,
         spaceBetween: 40,
       },
     },
+
     navigation: {
       nextEl: '.photos__btn--next',
       prevEl: '.photos__btn--prev',
@@ -34,7 +38,7 @@ export const initGallerySlider = () => {
       formatFractionCurrent: (number) => String(number).padStart(2, '0'),
       formatFractionTotal: (number) => String(number).padStart(2, '0'),
       renderFraction: function (currentClass, totalClass) {
-        return `<span class="${currentClass}"></span> <span class="photos__divider">/</span> <span class="${totalClass}"></span>`;
+        return `<span class="${currentClass}"></span><span class="photos__divider">/</span><span class="${totalClass}"></span>`;
       },
     },
   });

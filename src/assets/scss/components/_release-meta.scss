@@ -1,6 +1,14 @@
 @use '../mixins/disable-mob-hover' as *;
 @use '../mixins/breakpoint.scss' as *;
+
 .release-meta {
+  @include small-tablet {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
   &__cover {
     width: 150px;
     height: 150px;
@@ -16,7 +24,7 @@
   &__content {
     text-align: left;
 
-    @include small-mobile {
+    @include small-tablet {
       text-align: center;
     }
 

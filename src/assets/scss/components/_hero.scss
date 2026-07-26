@@ -2,14 +2,6 @@
 @use '../mixins/breakpoint.scss' as *;
 
 .hero {
-  &__container {
-    display: flex;
-    align-items: center;
-    flex-direction: column;
-    text-align: center;
-    height: 85dvh;
-  }
-
   &__content {
     margin-bottom: var(--spacing-24);
   }
@@ -41,29 +33,6 @@
     @include mobile {
       flex-direction: column;
       margin-bottom: var(--spacing-20);
-    }
-  }
-
-  &__social-link {
-    margin-bottom: var(--spacing-10);
-    font-family: var(--font-body);
-    font-size: 0.75rem;
-    font-weight: 600;
-    text-transform: uppercase;
-    letter-spacing: 0.3em;
-    color: var(--text-color);
-    padding-left: 0.3em;
-    transition:
-      color 0.25s ease,
-      text-shadow 0.25s ease;
-
-    @include hover {
-      color: var(--accent-color);
-      text-shadow: 0 0 10px rgba(255, 0, 60, 0.4);
-    }
-
-    @include mobile {
-      padding-top: var(--spacing-20);
     }
   }
 }
