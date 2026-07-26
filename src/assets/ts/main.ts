@@ -4,6 +4,7 @@ import { initWidgetVisibility } from './components/widgetVisibility';
 import { setupWidgetCloseButton } from './utils/setupWidgetCloseButton';
 import { initSwitchCategory } from './components/switchCategory';
 import { initGallerySlider } from './components/gallery-slider';
+import { initVideoPreview } from './components/video-preview';
 
 document.addEventListener('astro:page-load', () => {
   initSwitchCategory();
@@ -12,4 +13,5 @@ document.addEventListener('astro:page-load', () => {
   initWidgetVisibility();
   setupWidgetCloseButton();
   initGallerySlider();
+  initVideoPreview();
 });
