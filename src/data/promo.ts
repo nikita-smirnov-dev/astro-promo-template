@@ -443,5 +443,271 @@ export const promoData: PromoDataT = {
         'Участники группы Silence Tends to Destroy фотографируют себя на фоне стены',
       src: 'img/band-photos/band-photo-30',
     },
+    {
+      id: 31,
+      title:
+        'Гитарист Silence Tends to Destroy с телефоном на фоне припаркованных машин',
+      src: 'img/band-photos/band-photo-31',
+    },
+    {
+      id: 32,
+      title: 'Отдых после концерта Silence Tends to Destroy в клубе',
+      src: 'img/band-photos/band-photo-32',
+    },
+    {
+      id: 33,
+      title: 'Группа Silence Tends to Destroy в поездке',
+      src: 'img/band-photos/band-photo-33',
+    },
+    {
+      id: 34,
+      title: 'Создание мерча Silence Tends to Destroy',
+      src: 'img/band-photos/band-photo-34',
+    },
+    {
+      id: 35,
+      title: 'Набросок логотипа группы',
+      src: 'img/band-photos/band-photo-35',
+    },
+    {
+      id: 36,
+      title: 'Группа Silence Tends to Destroy на фоне стен старого здания',
+      src: 'img/band-photos/band-photo-36',
+    },
+    {
+      id: 37,
+      title: 'Группа Silence Tends to Destroy на сцене',
+      src: 'img/band-photos/band-photo-37',
+    },
+    {
+      id: 38,
+      title: 'Аббревиатура группы на пляже',
+      src: 'img/band-photos/band-photo-38',
+    },
+    {
+      id: 39,
+      title: 'Выступление Silence Tends to Destroy в клубе с фанатами',
+      src: 'img/band-photos/band-photo-39',
+    },
+    {
+      id: 40,
+      title: 'Подготовка  перед выступлением',
+      src: 'img/band-photos/band-photo-40',
+    },
+    {
+      id: 41,
+      title: 'Репетиция группы Silence Tends to Destroy',
+      src: 'img/band-photos/band-photo-41',
+    },
+    {
+      id: 42,
+      title: 'Встреча с фанатами',
+      src: 'img/band-photos/band-photo-42',
+    },
+    {
+      id: 43,
+      title: 'Солист Silence Tends to Destroy отдыхает на заднем плане',
+      src: 'img/band-photos/band-photo-43',
+    },
+    {
+      id: 44,
+      title: 'Группа Silence Tends to Destroy с фанатами',
+      src: 'img/band-photos/band-photo-44',
+    },
+    {
+      id: 45,
+      title: 'Участиники группы Silence Tends to Destroy в Великом Новгороде',
+      src: 'img/band-photos/band-photo-45',
+    },
+    {
+      id: 46,
+      title: 'Бас гитарист репетирует',
+      src: 'img/band-photos/band-photo-46',
+    },
+    {
+      id: 47,
+      title: 'Гитарист Silence Tends to Destroy играет на сцене',
+      src: 'img/band-photos/band-photo-47',
+    },
+    {
+      id: 48,
+      title: 'Участник группы Silence Tends to Destroy с фанаткой',
+      src: 'img/band-photos/band-photo-48',
+    },
+    {
+      id: 49,
+      title: 'Участник группыSilence Tends to Destroy  после концерта',
+      src: 'img/band-photos/band-photo-49',
+    },
+    {
+      id: 50,
+      title:
+        'Участник группы Silence Tends to Destroy работает над созданием альбома',
+      src: 'img/band-photos/band-photo-50',
+    },
+    {
+      id: 51,
+      title: 'Группа Silence Tends to Destroy у входа в клуб',
+      src: 'img/band-photos/band-photo-51',
+    },
+    {
+      id: 52,
+      title: 'Участники группы Silence Tends to Destroy отдыхают',
+      src: 'img/band-photos/band-photo-52',
+    },
+    {
+      id: 53,
+      title: 'Участники группы Silence Tends to Destroy в поездке',
+      src: 'img/band-photos/band-photo-53',
+    },
+    {
+      id: 54,
+      title: 'Гитарист Silence Tends to Destroy и фанат',
+      src: 'img/band-photos/band-photo-54',
+    },
+    {
+      id: 55,
+      title: 'Группа Silence Tends to Destroy играет в рок клубе',
+      src: 'img/band-photos/band-photo-55',
+    },
+    {
+      id: 56,
+      title:
+        'Совместное селфи участников группы Silence Tends to Destroy на городском фоне',
+      src: 'img/band-photos/band-photo-56',
+    },
+    {
+      id: 57,
+      title: 'Совместное селфи участников группы Silence Tends to Destroy',
+      src: 'img/band-photos/band-photo-57',
+    },
+    {
+      id: 58,
+      title: 'Совместное селфи участников группы Silence Tends to Destroy',
+      src: 'img/band-photos/band-photo-58',
+    },
+    {
+      id: 59,
+      title: 'Группа Silence Tends to Destroy отдыхает на природе',
+      src: 'img/band-photos/band-photo-59',
+    },
+    {
+      id: 60,
+      title: 'Солист группы Silence Tends to Destroy поет на сцене',
+      src: 'img/band-photos/band-photo-60',
+    },
+    {
+      id: 61,
+      title: 'Участники группы Silence Tends to Destroy в поездке',
+      src: 'img/band-photos/band-photo-61',
+    },
+    {
+      id: 62,
+      title: 'Участник группы Silence Tends to Destroy  репетирует в студии',
+      src: 'img/band-photos/band-photo-62',
+    },
+    {
+      id: 63,
+      title: 'Участники группы Silence Tends to Destroy отдыхают в кафе',
+      src: 'img/band-photos/band-photo-63',
+    },
+    {
+      id: 64,
+      title: 'Группа Silence Tends to Destroy на фоне старого здания',
+      src: 'img/band-photos/band-photo-64',
+    },
+    {
+      id: 65,
+      title:
+        'Участники группы Silence Tends to Destroy покаряют сцену питерского рок клуба',
+      src: 'img/band-photos/band-photo-65',
+    },
+    {
+      id: 66,
+      title: 'Участники группы Silence Tends to Destroy в поездке',
+      src: 'img/band-photos/band-photo-66',
+    },
+    {
+      id: 67,
+      title: 'Гитарист Silence Tends to Destroy дает автограф',
+      src: 'img/band-photos/band-photo-67',
+    },
+    {
+      id: 68,
+      title: 'Группа Silence Tends to Destroy играет концерт на сцене',
+      src: 'img/band-photos/band-photo-68',
+    },
+    {
+      id: 69,
+      title: 'Группа Silence Tends to Destroy с фанатами',
+      src: 'img/band-photos/band-photo-69',
+    },
+    {
+      id: 70,
+      title:
+        'Совместное фото участников группы Silence Tends to Destroy в Москве',
+      src: 'img/band-photos/band-photo-70',
+    },
+    {
+      id: 71,
+      title: 'Бас гитарист Silence Tends to Destroy на сцене',
+      src: 'img/band-photos/band-photo-71',
+    },
+    {
+      id: 72,
+      title: 'Группа Silence Tends to Destroy разговаривают на скамейке',
+      src: 'img/band-photos/band-photo-72',
+    },
+    {
+      id: 73,
+      title:
+        'Участники группы Silence Tends to Destroy фотографируют себя на фоне природы',
+      src: 'img/band-photos/band-photo-73',
+    },
+    {
+      id: 74,
+      title: 'Гитарист Silence Tends to Destroy репетирует',
+      src: 'img/band-photos/band-photo-74',
+    },
+    {
+      id: 75,
+      title: 'Silence Tends to Destroy на фотосессии',
+      src: 'img/band-photos/band-photo-75',
+    },
+    {
+      id: 76,
+      title: 'Группа Silence Tends to Destroy на отдыхе',
+      src: 'img/band-photos/band-photo-76',
+    },
+    {
+      id: 77,
+      title: 'Гитарист Silence Tends to Destroy на фотосессии',
+      src: 'img/band-photos/band-photo-77',
+    },
+    {
+      id: 78,
+      title: 'Гитарист Silence Tends to Destroy перед выступлением',
+      src: 'img/band-photos/band-photo-78',
+    },
+    {
+      id: 79,
+      title: 'Группа Silence Tends to Destroy с фанатами',
+      src: 'img/band-photos/band-photo-79',
+    },
+    {
+      id: 80,
+      title: 'Группа Silence Tends to Destroy на фоне крепости',
+      src: 'img/band-photos/band-photo-80',
+    },
+    {
+      id: 81,
+      title: 'Группа Silence Tends to Destroy на фоне старого здания',
+      src: 'img/band-photos/band-photo-81',
+    },
+    {
+      id: 82,
+      title: 'Бас гитарист Silence Tends to Destroy репетирует',
+      src: 'img/band-photos/band-photo-82',
+    },
   ],
 };

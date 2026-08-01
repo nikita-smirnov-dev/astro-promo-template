@@ -70,6 +70,32 @@
     }
   }
 
+  &__badge {
+    position: absolute;
+    top: 12px;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    width: max-content;
+    font-size: var(--font-size-12);
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 0.4em;
+    color: #ff6600;
+    pointer-events: none;
+    animation: pulse-text 1.5s infinite ease-in-out;
+  }
+
+  @keyframes pulse-text {
+    0%,
+    100% {
+      opacity: 0.4;
+    }
+    50% {
+      opacity: 1;
+    }
+  }
+
   &__icon {
     width: 50px;
     height: 50px;

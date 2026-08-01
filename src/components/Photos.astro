@@ -31,7 +31,11 @@ const { data } = Astro.props;
                   class="swiper-slide photos__slide"
                   id={`photo-${photo.id}`}
                 >
-                  <div class="photos__card">
+                  <a
+                    class="photos__card"
+                    data-fancybox="gallery"
+                    href={photoBand.src}
+                  >
                     <Picture
                       src={photoBand}
                       formats={['webp']}
@@ -41,7 +45,7 @@ const { data } = Astro.props;
                       class="photos__img"
                       loading="lazy"
                     />
-                  </div>
+                  </a>
                 </div>
               );
             })

@@ -2,6 +2,9 @@
 @use 'fonts' as *;
 @use 'settings' as *;
 
+@use '@fancyapps/ui/dist/fancybox/fancybox.css';
+@use './components/fancy-gallery' as *;
+
 @use './components/btn' as *;
 @use './components/not-found' as *;
 @use './components/dashboard' as *;
