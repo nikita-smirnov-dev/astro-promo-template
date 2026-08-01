@@ -20,28 +20,30 @@ import ReleaseMeta from './ReleaseMeta.astro';
     <MainTitle title="Бонус треки" />
     <div class="bonus-track__content">
       <div class="bonus-track__control">
-        <div class="bonus-track__inner">
+        <div class="bonus-track__inner" data-current-context="bonus">
           <ReleaseMeta data={promoData} />
-          <StudioMixer />
+          <div class="bonus-track__player">
+            <Player isBonus={true} />
+          </div>
         </div>
-        <div data-current-context="bonus">
-          <Player />
+        <StudioMixer />
+      </div>
+      <div class="bonus-track__console">
+        <div class="bonus-track__tracks--bonus">
+          <DemoTracks data={promoData} />
         </div>
-      </div>
-      <div class="media-panel__tracks--bonus">
-        <DemoTracks data={promoData} />
-      </div>
 
-      <div class="media-panel__tracks--bonus">
-        <UnreleasedTracks data={promoData} />
-      </div>
+        <div class="bonus-track__tracks--bonus">
+          <UnreleasedTracks data={promoData} />
+        </div>
 
-      <div class="media-panel__tracks--bonus">
-        <RemixesTracks data={promoData} />
-      </div>
+        <div class="bonus-track__tracks--bonus">
+          <RemixesTracks data={promoData} />
+        </div>
 
-      <div class="media-panel__tracks--bonus">
-        <InstrumentalTracks data={promoData} />
+        <div class="bonus-track__tracks--bonus">
+          <InstrumentalTracks data={promoData} />
+        </div>
       </div>
     </div>
   </div>

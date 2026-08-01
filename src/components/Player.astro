@@ -4,8 +4,9 @@ import { Icon } from 'astro-icon/components';
 interface Props {
   id?: 'main' | 'bonus';
   isWidget?: boolean;
+  isBonus?: boolean;
 }
-const { id = 'main', isWidget = false } = Astro.props;
+const { id = 'main', isWidget = false, isBonus = false } = Astro.props;
 ---
 
 <div
@@ -67,6 +68,7 @@ const { id = 'main', isWidget = false } = Astro.props;
         />
       </button>
     </div>
+    {isBonus && <span class="player__title-song" data-title-song />}
   </div>
 
   {

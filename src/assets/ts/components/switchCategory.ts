@@ -1,6 +1,7 @@
 export const initSwitchCategory = () => {
   const radios = document.querySelectorAll('input[name="mixer-category"]');
-  const lists = document.querySelectorAll('.media-panel__tracks--bonus');
+  const lists = document.querySelectorAll('.bonus-track__tracks--bonus');
+  const audio = document.querySelector('[data-main-audio]') as HTMLAudioElement;
 
   if (!radios.length || !lists.length) return;
 
@@ -10,6 +11,7 @@ export const initSwitchCategory = () => {
         list.classList.add('is-active');
       } else {
         list.classList.remove('is-active');
+        audio.pause();
       }
     });
   }

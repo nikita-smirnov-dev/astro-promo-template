@@ -88,21 +88,49 @@ const initGlobalAudioListeners = (audio: HTMLAudioElement) => {
   });
 
   audio.addEventListener('ended', () => {
+    const progressLine = document?.querySelector(
+      '[data-progress-bar]',
+    ) as HTMLElement;
     const currentCache =
       activePlayerContext === 'bonus'
         ? bonusTrackSourcesCache
         : mainTrackSourcesCache;
-    if (currentCache.length === 0) return;
+
+    if (!currentCache || currentCache.length === 0) return;
 
     currentIndex++;
-    if (currentIndex >= currentCache.length) {
-      currentIndex = 0;
+
+    if (activePlayerContext === 'bonus') {
+      const activeList = document.querySelector(
+        '.bonus-track__tracks--bonus.is-active',
+      );
+
+      const nextTrackSrc = currentCache[currentIndex];
+
+      const hasNextTrackInDOM = activeList?.querySelector(
+        `.bonus-track__item[data-src="${nextTrackSrc}"]`,
+      );
+
+      if (!nextTrackSrc || !hasNextTrackInDOM) {
+        currentIndex = 0;
+        audio.pause();
+        audio.src = '';
+        progressLine.style.width = '0%';
+
+        return;
+      }
+    } else {
+      if (currentIndex >= currentCache.length) {
+        currentIndex = 0;
+      }
     }
 
     if (currentCache[currentIndex]) {
       audio.src = currentCache[currentIndex];
       audio.load();
-      audio.play().catch(() => {});
+      audio
+        .play()
+        .catch((err) => console.error('Ошибка автовоспроизведения:', err));
     }
   });
 };
@@ -141,6 +169,10 @@ const updateUIStates = (playing: boolean, audio: HTMLAudioElement) => {
   }
 
   const trackItems = document.querySelectorAll('[data-track-item]');
+  const trackTitle = document.querySelectorAll('[data-title-song]');
+
+  let currentPlayingTitle: string;
+
   trackItems.forEach((item) => {
     const itemSrc = (item as HTMLElement).dataset.src || '';
     const currentAudioSrc = window.location.origin
@@ -151,6 +183,19 @@ const updateUIStates = (playing: boolean, audio: HTMLAudioElement) => {
       itemSrc === currentAudioSrc &&
       activePlayerContext === currentScreenContext;
     item.classList.toggle('is-active', shouldBeActive);
+
+    if (shouldBeActive) {
+      const nameElement = item.querySelector('.bonus-track__name');
+      if (nameElement) {
+        currentPlayingTitle = nameElement.textContent?.trim() || '';
+      } else {
+        currentPlayingTitle = item.textContent?.trim() || '';
+      }
+    }
+  });
+
+  trackTitle.forEach((titleElement) => {
+    titleElement.textContent = currentPlayingTitle;
   });
 };
 
@@ -246,7 +291,9 @@ export const initPlayer = () => {
     if (targetSrc) {
       audio.src = targetSrc;
       audio.load();
-      audio.play().catch((err) => console.log('Playback error:', err));
+      audio
+        .play()
+        .catch((err) => console.log('Ошибка автовоспроизведения:', err));
     }
   };
 
