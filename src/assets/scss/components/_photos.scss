@@ -7,9 +7,10 @@
     position: relative;
     left: 50%;
     transform: translateX(-50%);
-    overflow: hidden;
     margin-top: auto;
+    overflow: hidden;
     padding: var(--spacing-30) 0;
+    flex-shrink: 0;
     mask-image: linear-gradient(
       to right,
       transparent 0%,

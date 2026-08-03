@@ -5,7 +5,6 @@ import WidgetPlayer from '@components/WidgetPlayer.astro';
 import RockHand from '@components/RockHand.astro';
 
 import { promoData } from '@data/promo';
-import Footer from '@components/Footer.astro';
 
 interface Props {
   title?: string;
@@ -35,6 +34,5 @@ const { title = 'Название сайта', description = 'Описание �
     <main class="main">
       <slot />
     </main>
-    <Footer />
   </body>
 </html>

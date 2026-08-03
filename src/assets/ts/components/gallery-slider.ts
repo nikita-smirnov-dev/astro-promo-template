@@ -9,7 +9,7 @@ export const initGallerySlider = () => {
     modules: [Navigation, Pagination],
     grabCursor: true,
     centeredSlides: true,
-    loop: true,
+    loop: false,
     resistanceRatio: 0.1,
 
     breakpoints: {
