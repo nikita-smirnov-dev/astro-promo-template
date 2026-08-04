@@ -1,5 +1,10 @@
 ---
 import Head from '@components/Head.astro';
+import PosterPromo from '@components/PosterPromo.astro';
+import WidgetPlayer from '@components/WidgetPlayer.astro';
+import RockHand from '@components/RockHand.astro';
+
+import { promoData } from '@data/promo';
 
 interface Props {
   title?: string;
@@ -13,6 +18,19 @@ const { title = 'Название сайта', description = 'Описание �
 <html lang="ru" class="page">
   <Head title={title} description={description} />
   <body class="page__body">
+    <PosterPromo
+      imageUrl={promoData.poster}
+      imageMobileUrl={promoData.posterMobile}
+      transition:persist
+    />
+    <WidgetPlayer transition:persist />
+    <RockHand transition:persist />
+    <audio
+      id="main-audio"
+      data-main-audio
+      src=""
+      style="display: none;"
+      transition:persist></audio>
     <main class="main">
       <slot />
     </main>

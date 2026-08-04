@@ -1,0 +1,165 @@
+@use '../mixins/breakpoint.scss' as *;
+@use '../mixins/disable-mob-hover' as *;
+
+.bonus-track {
+  &__content {
+    display: flex;
+    flex-direction: column;
+    padding: var(--spacing-20);
+    width: 100%;
+    // height: 100%;
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(10px);
+    border: 1px solid #2d2d2d;
+    border-radius: 8px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+  }
+
+  &__control {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-10);
+  }
+
+  &__inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+
+    @include small-tablet {
+      gap: 10px;
+    }
+
+    @include mobile {
+      flex-direction: column;
+      justify-content: center;
+      gap: 0;
+    }
+  }
+
+  &__player {
+    width: 80%;
+  }
+
+  &__console {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: var(--spacing-30);
+    padding: var(--spacing-20);
+    width: 100%;
+    flex: 1 1 0;
+
+    @include tablet {
+      grid-template-columns: 1fr;
+      justify-items: center;
+      min-height: 520px;
+      max-height: none;
+      overflow-y: visible;
+      padding-right: 0;
+
+      &::-webkit-scrollbar {
+        display: none;
+      }
+    }
+
+    @include mobile {
+      padding: var(--spacing-10);
+    }
+
+    @media (orientation: landscape) and (max-height: 550px) {
+      flex: none;
+
+      max-height: none;
+      overflow-y: visible;
+      padding-right: 0;
+
+      &::-webkit-scrollbar {
+        display: none;
+      }
+    }
+  }
+
+  &__tracks {
+    display: flex;
+    width: 100%;
+    min-width: 0;
+    overflow: hidden;
+  }
+
+  &__tracks--bonus {
+    min-width: 0;
+    opacity: 0.3;
+    pointer-events: none;
+    transition: opacity 0.3s ease-in-out;
+
+    &.is-active {
+      opacity: 1;
+      pointer-events: all;
+    }
+
+    @include tablet {
+      display: none;
+      opacity: 1;
+      pointer-events: all;
+    }
+    &.is-active {
+      display: grid;
+    }
+  }
+
+  &__list {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 20px;
+    width: 100%;
+    min-width: 0;
+    overflow: hidden;
+  }
+
+  &__item {
+    text-align: left;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    width: 100%;
+    min-width: 0;
+    cursor: pointer;
+    color: var(--text-color);
+    transition: color 0.2s ease;
+
+    &:hover {
+      color: var(--white-color);
+    }
+
+    &.is-active {
+      color: var(--accent-color);
+      font-weight: bold;
+
+      @include tablet {
+        text-overflow: clip;
+        overflow: visible;
+      }
+      @include mobile {
+        animation: deathcore-marquee 6s linear 0.1s infinite;
+      }
+    }
+
+    @include tablet {
+      text-align: center;
+    }
+
+    @include xs-mobile {
+      text-align: left;
+    }
+  }
+}
+
+@keyframes deathcore-marquee {
+  0% {
+    transform: translateX(100%);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}

@@ -2,15 +2,18 @@
 import { Icon } from 'astro-icon/components';
 
 interface Props {
+  id?: 'main' | 'bonus';
   isWidget?: boolean;
+  isBonus?: boolean;
 }
-const { isWidget = false } = Astro.props;
+const { id = 'main', isWidget = false, isBonus = false } = Astro.props;
 ---
 
 <div
   class:list={['player player--main', { 'player--widget': isWidget }]}
   data-player
   data-is-widget={isWidget.toString()}
+  data-player-id={id}
 >
   <div class:list={['player__top', { 'player__top--widget': isWidget }]}>
     <div class="player__controls">
@@ -65,6 +68,7 @@ const { isWidget = false } = Astro.props;
         />
       </button>
     </div>
+    {isBonus && <span class="player__title-song" data-title-song />}
   </div>
 
   {

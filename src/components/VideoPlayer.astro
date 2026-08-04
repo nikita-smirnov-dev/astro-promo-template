@@ -1,0 +1,40 @@
+---
+import MainTitle from './MainTitle.astro';
+import ButtonGoBack from './ButtonGoBack.astro';
+import posterUrl from '@assets/img/video-poster/video-poster.jpg';
+import Button from './Button.astro';
+import { Icon } from 'astro-icon/components';
+---
+
+<section class="video section-offset">
+  <div class="video__container container app-screen" data-container-video>
+    <ButtonGoBack />
+    <MainTitle title="Видео" />
+    <div class="video__content">
+      <div class="video__overlay" data-video-preview>
+        <Button extraClass="video__btn">
+          <Icon name="play" class="video__icon" />
+          СМОТРЕТЬ РЕЛИЗ
+        </Button>
+      </div>
+
+      <iframe
+        class="video__iframe"
+        data-vk-frame
+        src="https://vk.ru/video_ext.php?oid=-60115128&id=456239242&autoplay=0&js_api=1"
+        style="background-color: #000"
+        allow="autoplay; encrypted-media; fullscreen; picture-in-picture; screen-wake-lock;"
+        frameborder="0"
+        allowfullscreen></iframe>
+      <!-- 
+      <iframe
+        class="video__iframe"
+        data-vk-frame
+        src="https://vk.ru/video_ext.php?oid=-60115128&id=456239230&autoplay=0&js_api=1"
+        style="background-color: #000"
+        allow="autoplay; encrypted-media; fullscreen; picture-in-picture; screen-wake-lock;"
+        frameborder="0"
+        allowfullscreen></iframe> -->
+    </div>
+  </div>
+</section>

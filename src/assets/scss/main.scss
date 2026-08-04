@@ -2,7 +2,12 @@
 @use 'fonts' as *;
 @use 'settings' as *;
 
+@use '@fancyapps/ui/dist/fancybox/fancybox.css';
+@use './components/fancy-gallery' as *;
+
 @use './components/btn' as *;
+@use './components/not-found' as *;
+@use './components/dashboard' as *;
 @use './components/main-title' as *;
 @use './components/poster' as *;
 @use './components/hero' as *;
@@ -12,3 +17,11 @@
 @use './components/rock-hand' as *;
 @use './components/player' as *;
 @use './components/widget-player' as *;
+@use './components/video-player' as *;
+@use './components/photos' as *;
+@use './components/bonus-tracks' as *;
+@use './components/studio-mixer' as *;
+@use './components/go-back' as *;
+@use './components/release-meta' as *;
+
+@import '../../../node_modules/swiper/swiper-bundle.min.css';

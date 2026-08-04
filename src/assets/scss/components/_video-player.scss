@@ -1,0 +1,130 @@
+@use '../mixins/disable-mob-hover' as *;
+@use '../mixins/breakpoint.scss' as *;
+
+.video {
+  @include small-tablet {
+    &__container {
+      min-height: 85dvh;
+    }
+  }
+  &__content {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    max-width: 900px;
+    margin-top: auto;
+    z-index: 9;
+  }
+
+  &__overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--black-color);
+    border: 2px solid var(--accent-color);
+    z-index: 10;
+    transition: opacity 0.3s ease;
+    cursor: pointer;
+  }
+
+  &__btn {
+    position: relative;
+    width: 50%;
+    background: #111;
+    color: var(--accent-color);
+    padding: 15px 40px;
+    font-family: 'Impact', sans-serif;
+    font-size: var(--font-size-24);
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    z-index: 11;
+    transition:
+      background 0.2s ease,
+      color 0.2s ease,
+      box-shadow 0.2s ease,
+      transform 0.2s ease;
+    box-shadow: 0 0 20px rgba(255, 0, 60, 0.3);
+    border: 2px solid var(--accent-color);
+
+    @include hover {
+      background: var(--accent-color);
+      color: var(--black-color);
+      box-shadow: 0 0 40px rgba(255, 0, 60, 0.7);
+      transform: scale(1.05);
+    }
+
+    @include tablet {
+      font-size: var(--font-size-20);
+    }
+
+    @include mobile {
+      width: 70%;
+      font-size: var(--font-size-14);
+    }
+  }
+
+  &__icon {
+    width: 34px;
+    height: 34px;
+    margin-right: var(--spacing-10);
+    fill: currentcolor;
+
+    @include tablet {
+      width: 30px;
+      height: 30px;
+    }
+
+    @include mobile {
+      width: 24px;
+      height: 24px;
+    }
+  }
+
+  &__iframe {
+    width: 50vw;
+    height: 38vh;
+    max-width: 900px;
+    max-height: 500px;
+
+    @include desktop {
+      width: 70vw;
+      height: 35vh;
+    }
+
+    @include small-tablet {
+      width: 80vw;
+      height: 35vh;
+    }
+
+    @include mobile {
+      width: 95vw;
+      height: 30vh;
+    }
+  }
+
+  @media (max-height: 450px) and (orientation: landscape) {
+    &__iframe {
+      width: 75vw;
+      height: 60vh;
+    }
+
+    &__btn {
+      width: auto;
+      padding: 8px 20px;
+      font-size: var(--font-size-14, 14px);
+    }
+
+    &__icon {
+      width: 20px;
+      height: 20px;
+      margin-right: var(--spacing-5, 5px);
+    }
+  }
+}

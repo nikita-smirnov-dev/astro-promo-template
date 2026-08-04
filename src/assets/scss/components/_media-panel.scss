@@ -10,17 +10,13 @@
   margin-top: auto;
   margin-bottom: var(--spacing-10);
   padding: 20px;
-  background: rgba(0, 0, 0, 0.4);
-  background: linear-gradient(
-    135deg,
-    rgba(10, 10, 10, 0.95) 0%,
-    rgba(20, 20, 20, 0.8) 100%
-  );
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(10px);
   border: 1px solid rgba(255, 255, 255, 0.05);
   border-radius: 4px;
 
   @include tablet-to-small {
-    grid-template-columns: 2fr 1fr;
+    grid-template-columns: 1fr 1fr;
   }
 
   @include desktop {
@@ -31,70 +27,12 @@
     grid-template-columns: 1fr;
   }
 
-  @include small-mobile {
-    display: flex;
-    flex-direction: column;
-  }
-
-  &__meta {
-    display: flex;
-    flex-direction: column;
-    align-items: start;
-    justify-content: flex-start;
-    gap: 20px;
-
-    @include tablet-to-small {
-      order: -2;
-      flex-direction: row;
-      align-items: center;
-    }
-
-    @include xs-mobile {
-      align-items: center;
-      justify-content: center;
-      border-bottom: 1px solid rgba(255, 255, 255, 0.05);
-    }
-  }
-
-  &__cover {
-    width: 150px;
-    height: 150px;
-    border-radius: 6px;
-
-    @include tablet-to-small {
-      width: 100px;
-      height: 100px;
-    }
-  }
-
-  &__content {
-    text-align: left;
-
-    @include small-mobile {
-      text-align: center;
-    }
-
-    @include xs-mobile {
-      text-align: center;
-    }
-  }
-
-  &__release-title {
-    margin: 0;
-    margin-bottom: 10px;
-    color: var(--text-color);
-  }
-
-  &__release-info {
-    margin: 0;
-    margin-bottom: 10px;
-    color: var(--text-color);
-  }
-
   &__tracks {
     display: flex;
     align-items: center;
     justify-content: center;
+    width: 100%;
+    position: relative;
 
     @include tablet-to-small {
       grid-row: span 2;
@@ -103,11 +41,20 @@
     }
   }
 
+  &__tracks--bonus {
+    display: none;
+
+    &.is-active {
+      display: flex;
+      align-items: flex-start;
+    }
+  }
+
   &__track-list {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    justify-content: center;
+    justify-content: safe center;
     gap: 20px;
   }
 
@@ -123,6 +70,10 @@
     &.is-active {
       color: var(--accent-color);
       font-weight: bold;
+    }
+
+    @include xs-mobile {
+      text-align: left;
     }
   }
 }

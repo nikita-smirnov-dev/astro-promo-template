@@ -1,68 +1,52 @@
 ---
-import { Image } from 'astro:assets';
-import { Icon } from 'astro-icon/components';
-import Button from './Button.astro';
-import { poster } from '@data/images';
 import type { PromoDataT } from '@appTypes/promoTypes';
 import MainTitle from './MainTitle.astro';
 import Player from './Player.astro';
+import ButtonGoBack from './ButtonGoBack.astro';
+import ReleaseMeta from './ReleaseMeta.astro';
+import { promoData } from '@data/promo';
 
 interface Props {
-  id: string;
-  class: string;
   data: PromoDataT;
 }
 
-const { id, class: extraClass = '', data } = Astro.props;
+const { data } = Astro.props;
 
-const cover = poster[`/src/assets/${data.cover}`]?.default;
+const mainTracks = data.tracks?.filter((t) => t.category === 'main');
 ---
 
-<section id={id} class:list={extraClass}>
-  <div class="media__container container">
-    <div class="media__inner">
-      <Button extraClass="media__btn btn--secondary" href="#hero">
-        <Icon name="arrow-back" class="media__btn-icon" />
-        <span class="media__btn-text">Назад</span>
-      </Button>
-    </div>
-    <MainTitle title="Official Tracklist" />
+<section class="section-offset">
+  <div class="media__container container app-screen">
+    <ButtonGoBack />
+    <MainTitle title="Основной треклист" />
     <div class="media-panel" data-media>
       <div class="media-panel__meta">
-        {
-          cover && (
-            <Image
-              src={cover}
-              alt={data.releaseName}
-              class="media-panel__cover"
-              width={200}
-              height={200}
-            />
-          )
-        }
-        <div class="media-panel__content">
-          <h4 class="media-panel__release-title">{data.releaseName}</h4>
-          <p class="media-panel__release-info">{data.releaseYear}</p>
-        </div>
+        <ReleaseMeta data={promoData} />
       </div>
 
-      <Player isWidget={false} />
+      <div data-current-context="main">
+        <Player isWidget={false} isBonus={false} />
+      </div>
 
-      <div class="media-panel__tracks">
+      <div class="media-panel__tracks media-panel__tracks--main">
         <ul class="media-panel__track-list list-reset">
           {
-            data.tracks?.map((track, idx) => (
-              <li
-                class="media-panel__track-item"
-                data-src={track.fileUrl}
-                data-track-item
-              >
-                <span class="media-panel__track-number">
-                  {String(idx + 1).padStart(2, '0') + ' '}
-                </span>
-                <span class="media-panel__track-name">{track.title}</span>
-              </li>
-            ))
+            mainTracks && mainTracks?.length > 0 ? (
+              mainTracks?.map((track, idx) => (
+                <li
+                  class="media-panel__track-item"
+                  data-src={track.fileUrl}
+                  data-track-item
+                >
+                  <span class="media-panel__track-number">
+                    {String(idx + 1).padStart(2, '0') + ' '}
+                  </span>
+                  <span class="media-panel__track-name">{track.title}</span>
+                </li>
+              ))
+            ) : (
+              <p>Трек-лист временно отсутствует!</p>
+            )
           }
         </ul>
       </div>

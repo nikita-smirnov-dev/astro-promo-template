@@ -1,71 +1,17 @@
 @use '../mixins/breakpoint.scss' as *;
 
 .details {
-  &__container {
-    position: relative;
-    display: flex;
-    align-items: center;
-    flex-direction: column;
-    text-align: center;
-    height: 85dvh;
-  }
-
-  &__inner {
-    position: absolute;
-    top: 20px;
-    left: 37px;
-
-    @include tablet {
-      top: -35px;
-      left: 20px;
-    }
-
-    @include mobile {
-      top: -20px;
-    }
-  }
-
-  &__btn-icon {
-    display: none;
-  }
-
-  @include tablet {
-    &__btn-icon {
-      width: 40px;
-      height: 40px;
-      display: block;
-      stroke: var(--text-color);
-    }
-  }
-
-  @include mobile {
-    &__btn-icon {
-      width: 20px;
-      height: 20px;
-    }
-  }
-
-  @include tablet {
-    &__btn-text {
-      display: none;
-    }
-  }
-
   &__info {
     margin-top: auto;
     margin-bottom: var(--spacing-10);
     width: 100%;
     max-width: 800px;
     padding: 25px 35px;
-    background: rgba(0, 0, 0, 0.4);
     border: 1px solid rgba(255, 255, 255, 0.05);
     border-bottom: 2px solid var(--accent-color);
     border-radius: 4px;
-    background: linear-gradient(
-      135deg,
-      rgba(10, 10, 10, 0.95) 0%,
-      rgba(20, 20, 20, 0.8) 100%
-    );
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(10px);
   }
 
   &__list {

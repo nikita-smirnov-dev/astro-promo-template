@@ -1,0 +1,35 @@
+@use '../mixins/breakpoint.scss' as *;
+
+.fancybox__container {
+  --f-toolbar-padding: 16px 32px;
+  --f-toolbar-gap: 8px;
+  --f-button-border-radius: 50%;
+  --f-thumb-width: 82px;
+  --f-thumb-height: 82px;
+  --f-thumb-opacity: 0.5;
+  --f-thumb-hover-opacity: 1;
+  --f-thumb-selected-opacity: 1;
+}
+
+@include tablet {
+  .fancybox__container {
+    --f-toolbar-padding: 12px 20px;
+
+    --f-thumb-width: 64px;
+    --f-thumb-height: 64px;
+  }
+}
+
+@include mobile {
+  .fancybox__container {
+    --f-toolbar-padding: 8px 12px;
+
+    --f-thumb-width: 52px;
+    --f-thumb-height: 52px;
+  }
+
+  .f-button.is-prev,
+  .f-button.is-next {
+    display: none;
+  }
+}

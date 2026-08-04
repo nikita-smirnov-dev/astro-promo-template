@@ -1,0 +1,131 @@
+@use '../mixins/disable-mob-hover' as *;
+@use '../mixins/breakpoint.scss' as *;
+
+.photos {
+  display: flex;
+  flex-direction: column;
+  height: 85dvh;
+  overflow: hidden;
+
+  @include small-tablet {
+    &__container {
+      height: 65dvh;
+      min-height: 0;
+    }
+  }
+
+  &__swiper {
+    width: 100%;
+    overflow: visible;
+    padding-left: calc((100vw - var(--container-width)) / 2);
+    padding-right: 15px;
+    padding-top: var(--spacing-20);
+    padding-bottom: var(--spacing-20);
+    position: relative;
+
+    @include mobile {
+      mask-image: none;
+    }
+
+    @include desktop {
+      padding-left: 15px;
+    }
+  }
+  @include small-tablet {
+    .swiper-wrapper {
+      height: auto;
+    }
+  }
+
+  &__slide {
+    width: 450px;
+    height: 45vh;
+    flex-shrink: 0;
+    transition:
+      transform 0.3s ease,
+      opacity 0.3s ease;
+
+    &:not(:global(.swiper-slide-active)) {
+      opacity: 0.3;
+    }
+  }
+
+  &__card {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    width: 100%;
+    padding: 10px;
+    border-radius: 4px;
+  }
+
+  &__picture-box {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    width: 100%;
+  }
+
+  &__img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 2px;
+  }
+
+  &__controls {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--spacing-40);
+    margin-bottom: var(--spacing-40);
+    width: 100%;
+  }
+
+  &__pagination {
+    position: relative;
+    width: auto;
+    font-size: var(--font-size-16);
+    font-weight: bold;
+    color: var(--accent-color);
+    text-shadow: 0 0 10px rgb(var(--accent-color) / 50%);
+    letter-spacing: 2px;
+    user-select: none;
+
+    :global(.swiper-pagination-current) {
+      color: var(--accent-color);
+      text-shadow: 0 0 10px rgb(var(--accent-color) / 50%);
+    }
+
+    @include small-tablet {
+      padding-top: var(--spacing-30);
+    }
+  }
+
+  &__divider {
+    color: var(--accent-color);
+  }
+
+  &__btn {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 44px;
+    height: 44px;
+    cursor: pointer;
+    color: var(--accent-color);
+    opacity: 0.7;
+    transition: opacity 0.3s ease-in-out;
+
+    @include hover {
+      opacity: 1;
+    }
+
+    @include small-tablet {
+      display: none;
+    }
+  }
+}

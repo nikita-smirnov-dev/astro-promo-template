@@ -1,0 +1,50 @@
+---
+import { promoData } from '@data/promo';
+import DemoTracks from './DemoTracks.astro';
+import UnreleasedTracks from './UnreleasedTracks.astro';
+import RemixesTracks from './RemixesTracks.astro';
+import InstrumentalTracks from './InstrumentalTracks.astro';
+import StudioMixer from './StudioMixer.astro';
+import Player from './Player.astro';
+import ButtonGoBack from './ButtonGoBack.astro';
+import MainTitle from './MainTitle.astro';
+import ReleaseMeta from './ReleaseMeta.astro';
+---
+
+<section class="section-offset">
+  <div
+    class="bonus-track__container container app-screen"
+    data-player-context="bonus"
+  >
+    <ButtonGoBack />
+    <MainTitle title="Бонус треки" />
+    <div class="bonus-track__content">
+      <div class="bonus-track__control">
+        <div class="bonus-track__inner" data-current-context="bonus">
+          <ReleaseMeta data={promoData} />
+          <div class="bonus-track__player">
+            <Player isBonus={true} />
+          </div>
+        </div>
+        <StudioMixer />
+      </div>
+      <div class="bonus-track__console">
+        <div class="bonus-track__tracks--bonus">
+          <DemoTracks data={promoData} />
+        </div>
+
+        <div class="bonus-track__tracks--bonus">
+          <UnreleasedTracks data={promoData} />
+        </div>
+
+        <div class="bonus-track__tracks--bonus">
+          <RemixesTracks data={promoData} />
+        </div>
+
+        <div class="bonus-track__tracks--bonus">
+          <InstrumentalTracks data={promoData} />
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

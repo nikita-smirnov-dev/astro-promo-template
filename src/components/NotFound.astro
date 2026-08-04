@@ -1,0 +1,15 @@
+---
+import { Icon } from 'astro-icon/components';
+import Button from './Button.astro';
+---
+
+<section class="not-found">
+  <div class="container not-found__inner">
+    <Icon name="not-found" class="not-found__icon" aria-hidden="true" />
+    <h1 class="not-found__title">Страница не найдена</h1>
+    <p class="not-found__descr">Упс, кажется этот трек еще не записан!</p>
+    <Button href="/" extraClass="not-found__link btn--primary"
+      >Вернуться на главную</Button
+    >
+  </div>
+</section>

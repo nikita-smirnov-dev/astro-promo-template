@@ -1,0 +1,36 @@
+---
+import type { PromoDataT } from '@appTypes/promoTypes';
+
+interface Props {
+  data: PromoDataT;
+}
+
+const { data } = Astro.props;
+
+const instrumentalTracks = data.tracks?.filter(
+  (t) => t.category === 'instrumental',
+);
+---
+
+<div class="bonus-track__tracks" data-category-wrapper="instrumental">
+  <ul class="bonus-track__list list-reset">
+    {
+      instrumentalTracks && instrumentalTracks.length > 0 ? (
+        instrumentalTracks?.map((track, idx) => (
+          <li
+            class="bonus-track__item"
+            data-src={track.fileUrl}
+            data-track-item
+          >
+            <span class="bonus-track__number">
+              {String(idx + 1).padStart(2, '0') + ' '}
+            </span>
+            <span class="bonus-track__name">{track.title}</span>
+          </li>
+        ))
+      ) : (
+        <p>Трек-лист временно отсутствует!</p>
+      )
+    }
+  </ul>
+</div>

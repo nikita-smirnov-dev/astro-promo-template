@@ -4,12 +4,17 @@
 .player {
   display: flex;
   flex-direction: column;
-  gap: 24px;
+  gap: var(--spacing-24);
   width: 100%;
 
   @include small-tablet {
     grid-column: 2 span;
     order: 3;
+  }
+
+  @include xs-mobile {
+    grid-column: 1 span;
+    gap: 5px;
   }
 
   @include xs-mobile {
@@ -20,8 +25,8 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
     padding-bottom: 8px;
+    min-width: 0;
 
     @include mobile {
       justify-content: center;
@@ -89,6 +94,16 @@
     height: 30px;
   }
 
+  &__title-song {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    color: var(--accent-color);
+    @include small-tablet {
+      display: none;
+    }
+  }
+
   &__bottom {
     display: flex;
     align-items: center;
@@ -115,6 +130,7 @@
     background: rgba(255, 255, 255, 0.1);
     border-radius: 2px;
     cursor: pointer;
+    -webkit-tap-highlight-color: transparent;
   }
 
   &__progress-bar {
@@ -135,6 +151,7 @@
     gap: 8px;
     width: 20%;
     flex-shrink: 0;
+    -webkit-tap-highlight-color: transparent;
 
     @include mobile {
       display: none;
