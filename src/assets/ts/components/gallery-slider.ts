@@ -1,16 +1,15 @@
 import Swiper from 'swiper';
-import { Navigation, Pagination } from 'swiper/modules';
+import { Keyboard, A11y, Navigation, Pagination } from 'swiper/modules';
 
 export const initGallerySlider = () => {
   const swiperElement = document.querySelector('.photos__swiper');
   if (!swiperElement) return;
 
   new Swiper('.photos__swiper', {
-    modules: [Navigation, Pagination],
+    modules: [Navigation, Pagination, Keyboard, A11y],
     grabCursor: true,
     centeredSlides: true,
     loop: false,
-    resistanceRatio: 0.1,
 
     breakpoints: {
       320: {
@@ -40,6 +39,21 @@ export const initGallerySlider = () => {
       renderFraction: function (currentClass, totalClass) {
         return `<span class="${currentClass}"></span><span class="photos__divider">/</span><span class="${totalClass}"></span>`;
       },
+    },
+    keyboard: {
+      enabled: true,
+      onlyInViewport: true,
+      pageUpDown: true,
+    },
+
+    a11y: {
+      enabled: true,
+      prevSlideMessage: 'Предыдущий слайд',
+      nextSlideMessage: 'Следующий слайд',
+      notificationClass: 'swiper-notification',
+      containerMessage:
+        'Галерея фотографий группы Silence tends to destroy. Используйте стрелки для прокрутки',
+      itemRoleDescriptionMessage: null,
     },
   });
 };

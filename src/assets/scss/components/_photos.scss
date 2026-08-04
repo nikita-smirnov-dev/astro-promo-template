@@ -2,30 +2,43 @@
 @use '../mixins/breakpoint.scss' as *;
 
 .photos {
+  display: flex;
+  flex-direction: column;
+  height: 85dvh;
+  overflow: hidden;
+
+  @include small-tablet {
+    &__container {
+      height: 65dvh;
+      min-height: 0;
+    }
+  }
+
   &__swiper {
     width: 100%;
+    overflow: visible;
+    padding-left: calc((100vw - var(--container-width)) / 2);
+    padding-right: 15px;
+    padding-top: var(--spacing-20);
+    padding-bottom: var(--spacing-20);
     position: relative;
-    left: 50%;
-    transform: translateX(-50%);
-    margin-top: auto;
-    overflow: hidden;
-    padding: var(--spacing-30) 0;
-    flex-shrink: 0;
-    mask-image: linear-gradient(
-      to right,
-      transparent 0%,
-      #000 10%,
-      #000 90%,
-      transparent 100%
-    );
 
     @include mobile {
       mask-image: none;
     }
+
+    @include desktop {
+      padding-left: 15px;
+    }
+  }
+  @include small-tablet {
+    .swiper-wrapper {
+      height: auto;
+    }
   }
 
   &__slide {
-    width: 100%;
+    width: 450px;
     height: 45vh;
     flex-shrink: 0;
     transition:

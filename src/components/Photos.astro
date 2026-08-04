@@ -18,54 +18,50 @@ const { data } = Astro.props;
   <div class="photos__container container app-screen">
     <ButtonGoBack />
     <MainTitle title="Галерея" />
-    <div class="swiper photos__swiper">
-      <div class="swiper-wrapper">
-        {
-          data.photos && data.photos.length > 0 ? (
-            data.photos.map((photo) => {
-              const photoPath =
-                dataImage[`/src/assets/${photo.src}.jpg`]?.default;
-              const photoBand = photoPath || defaultImage;
-              return (
-                <div
-                  class="swiper-slide photos__slide"
-                  id={`photo-${photo.id}`}
+  </div>
+  <div class="swiper photos__swiper">
+    <div class="swiper-wrapper">
+      {
+        data.photos && data.photos.length > 0 ? (
+          data.photos.map((photo) => {
+            const photoPath =
+              dataImage[`/src/assets/${photo.src}.jpg`]?.default;
+            const photoBand = photoPath || defaultImage;
+            return (
+              <div class="swiper-slide photos__slide" id={`photo-${photo.id}`}>
+                <a
+                  class="photos__card"
+                  data-fancybox="gallery"
+                  href={photoBand.src}
+                  aria-label={`Открыть изображение ${photo.title} во весь экран`}
                 >
-                  <a
-                    class="photos__card"
-                    data-fancybox="gallery"
-                    href={photoBand.src}
-                  >
-                    <Picture
-                      src={photoBand}
-                      formats={['webp']}
-                      alt={photo.title}
-                      widths={[600, 800]}
-                      pictureAttributes={{ class: 'photos__picture-box' }}
-                      class="photos__img"
-                      loading="lazy"
-                    />
-                  </a>
-                </div>
-              );
-            })
-          ) : (
-            <div class="swiper-slide">
-              <p>Галерея пуста</p>
-            </div>
-          )
-        }
-      </div>
+                  <Picture
+                    src={photoBand}
+                    formats={['webp']}
+                    alt={photo.title}
+                    widths={[600, 800]}
+                    pictureAttributes={{ class: 'photos__picture-box' }}
+                    class="photos__img"
+                    loading="lazy"
+                  />
+                </a>
+              </div>
+            );
+          })
+        ) : (
+          <div class="swiper-slide">
+            <p>Галерея пуста</p>
+          </div>
+        )
+      }
+    </div>
 
-      <div class="photos__controls">
-        <button
-          class="swiper-button-prev photos__btn photos__btn--prev btn-reset"
-          aria-label="Назад"></button>
-        <div class="swiper-pagination photos__pagination"></div>
-        <button
-          class="swiper-button-next photos__btn photos__btn--next btn-reset"
-          aria-label="Вперед"></button>
-      </div>
+    <div class="photos__controls">
+      <button class="swiper-button-prev photos__btn photos__btn--prev btn-reset"
+      ></button>
+      <div class="swiper-pagination photos__pagination"></div>
+      <button class="swiper-button-next photos__btn photos__btn--next btn-reset"
+      ></button>
     </div>
   </div>
 </section>
