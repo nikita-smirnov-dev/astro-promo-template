@@ -448,6 +448,7 @@ export const initPlayer = () => {
 
   if (audio && volumeInput && volumeBtn) {
     audio.volume = 0.5;
+    updateSlider();
     volumeInput.value = (0.5).toString();
 
     volumeBtn.addEventListener('click', () => {
@@ -456,12 +457,24 @@ export const initPlayer = () => {
         audio.volume = 0;
         volumeInput.value = '0';
         volumeBtn.classList.add('is-volume');
+        updateSlider();
       } else {
         audio.volume = lastVolume > 0 ? lastVolume : 0.5;
         volumeInput.value = audio.volume.toString();
         volumeBtn.classList.remove('is-volume');
+        updateSlider();
       }
     });
+
+    function updateSlider() {
+      const value = +volumeInput.value;
+      const min = +volumeInput.min || 0;
+      const max = +volumeInput.max || 100;
+
+      const percent = ((value - min) / (max - min)) * 100;
+
+      volumeInput.style.background = `linear-gradient(to right, #ff003c 0%, #ff003c ${percent}%,rgba(255, 255, 255, 0.1) ${percent}%, rgba(255, 255, 255, 0.1) 100%)`;
+    }
 
     volumeInput.addEventListener('input', () => {
       const value = volumeInput.value;
@@ -472,6 +485,7 @@ export const initPlayer = () => {
         lastVolume = +value;
         volumeBtn.classList.remove('is-volume');
       }
+      updateSlider();
     });
   }
 };

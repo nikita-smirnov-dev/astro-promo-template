@@ -217,8 +217,25 @@
         box-shadow 0.3s ease-in-out;
     }
 
+    &::-moz-range-thumb {
+      appearance: none;
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background: var(--accent-color);
+      cursor: pointer;
+      box-shadow: 0 0 6px var(--accent-color);
+      transition:
+        background 0.3s ease-in-out,
+        box-shadow 0.3s ease-in-out;
+    }
+
     @include hover {
       &::-webkit-slider-thumb {
+        background: #ff0000;
+        box-shadow: 0 0 15px #ff0000;
+      }
+      &::-moz-range-thumb {
         background: #ff0000;
         box-shadow: 0 0 15px #ff0000;
       }
