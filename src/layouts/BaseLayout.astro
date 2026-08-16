@@ -3,6 +3,7 @@ import Head from '@components/Head.astro';
 import PosterPromo from '@components/PosterPromo.astro';
 import WidgetPlayer from '@components/WidgetPlayer.astro';
 import RockHand from '@components/RockHand.astro';
+import Analytics from '@vercel/analytics/astro';
 
 import { promoData } from '@data/promo';
 
@@ -34,5 +35,6 @@ const { title = 'Название сайта', description = 'Описание �
     <main class="main">
       <slot />
     </main>
+    <Analytics />
   </body>
 </html>
